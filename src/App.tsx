@@ -10,6 +10,7 @@ function App() {
       </header>
       <div className="App__Container">
         <div className="App__Input"></div>
+        <input type="button"></input>
         <div className="App__Output"></div>
       </div>
     </div>
