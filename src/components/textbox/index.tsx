@@ -1,7 +1,7 @@
 import React from "react";
 import "./index.css";
 
-export const Amount: React.FC<{
+const Amount: React.FC<{
   icon: string;
   title: string;
 }> = ({ icon, title }) => {
@@ -12,3 +12,4 @@ export const Amount: React.FC<{
     </div>
   );
 };
+export default Amount;
