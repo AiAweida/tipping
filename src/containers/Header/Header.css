@@ -1,0 +1,6 @@
+.App__Header {
+  letter-spacing: 10px;
+  color: var(--Verydarkcyan);
+  font-family: var(--Family);
+  font-weight: bold;
+}

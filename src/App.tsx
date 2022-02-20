@@ -4,7 +4,7 @@ import { Amount } from "components/textbox";
 import "App.css";
 import { Header } from "containers/Header";
 import { Buttons } from "containers/Button";
-
+import "containers/Header/Header.css";
 function App() {
   return (
     <div className="App">
