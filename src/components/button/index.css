@@ -1,7 +1,8 @@
 .Button {
-  /* padding-top: 40%; */
   margin-bottom: 1%;
   margin-left: 1%;
   color: var(--White);
   background-color: var(--Verydarkcyan);
+  font-family: var(--Family);
+  font-weight: bold;
 }

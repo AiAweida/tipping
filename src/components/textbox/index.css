@@ -1,7 +1,32 @@
 .Text {
-  padding-top: 40%;
   margin-bottom: 1%;
   margin-left: 1%;
-  color: var(--White);
-  background-color: var(--Verydarkcyan);
+  color: black;
+  background-color: var(--White);
+  font-family: var(--Family);
+  font-weight: bold;
+  background-position: left;
+  padding-left: 15px;
+}
+#bill {
+  background-image: url("../../images/dollar.svg");
+  background-repeat: no-repeat;
+}
+#people {
+  background-image: url("../../images/person.svg");
+  background-repeat: no-repeat;
+}
+.label__layout {
+  font-size: 15px;
+  background-color: white;
+  color: grey;
+  margin-left: 2px;
+}
+.Input_text {
+  position: relative;
+  /* align-items: initial; */
+  flex-direction: column;
+  display: flex;
+  background-color: white;
+  /* width: 20.3%; */
 }

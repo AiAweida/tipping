@@ -1,11 +1,14 @@
 import React from "react";
-
 import "./index.css";
-const TextBox: React.FC<{ symbol?: string }> = ({ symbol }) => {
+
+export const Amount: React.FC<{
+  icon: string;
+  title: string;
+}> = ({ icon, title }) => {
   return (
-    <textarea className="Text" placeholder="amount to pay">
-      {symbol}
-    </textarea>
+    <div className="Input_text">
+      <label className="label__layout">{title}</label>
+      <input id={icon} className="Text" typeof="text" />
+    </div>
   );
 };
-export default TextBox;

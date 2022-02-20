@@ -1,24 +1,17 @@
 import React from "react";
-import "./App.css";
-import Button from "./components/button/index";
-import TextBox from "./components/textbox";
+// import Button from "components/button";
+import { Amount } from "components/textbox";
+import "App.css";
+import { Header } from "containers/Header";
+import { Buttons } from "containers/Button";
 
 function App() {
   return (
     <div className="App">
-      <header className="App__Header">
-        SPLI<p>TTER</p>
-      </header>
-      <div className="Input__container">
-        {/* <TextBox title={'bill'} icon={'dollar sign'}/> */}
-        <Button symbol="5%" />
-        <Button symbol="10%" />
-        <Button symbol="15%" />
-        <Button symbol="25%" />
-        <Button symbol="50%" />
-        <TextBox symbol="" />
-        {/* <TextBox title={'number of people'} icon={''}/> */}
-      </div>
+      <Header />
+      <Amount icon="bill" title="bill" />
+      <Buttons />
+      <Amount icon="people" title="people" />
     </div>
   );
 }
