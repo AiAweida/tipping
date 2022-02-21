@@ -1,21 +1,7 @@
 .Text {
-  color: black;
+  color: var(--Verydarkcyan);
   background-color: var(--White);
   font-family: var(--Family);
   font-weight: bold;
   border-radius: 1%;
 }
-/* .label__layout {
-  font-size: 15px;
-  background-color: white;
-  color: grey;
-  margin-left: 2px;
-} */
-/* .Input_text {
-  position: relative;
-  /* align-items: initial; */
-/* flex-direction: column;
-display: flex;
-background-color: white;
-width: 20.3%; */
-/*} */

@@ -3,4 +3,6 @@
   font-family: var(--Family);
   font-weight: bold;
   background-color: var(--white);
+  margin-left: 5%;
+  margin-bottom: 5%;
 }
