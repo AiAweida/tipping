@@ -1,4 +1,4 @@
-import React from "react";
+import * as React from "react";
 import "./index.css";
 const Button: React.FC<{ symbol: string }> = ({ symbol }) => {
   // const { color, setcolor } = useState("--Verydarkcyan");

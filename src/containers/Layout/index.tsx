@@ -1,19 +1,22 @@
-import React from "react";
-import Button from "../../components/button";
-import Amount from "../../components/textbox";
+import * as React from "react";
+import Button from "../../Components/Button";
+import InputWithIcon from "../../Components/Textbox";
+import person from "../../images/person.svg";
+import bill from "../../images/dollar.svg";
+import "../../App.css";
 interface buttonprops {}
 export const InputLayout: React.FC<buttonprops> = () => {
   return (
-    <>
-      <Amount icon="bill" title="bill" />
-      <div className="Input__container">
+    <div className="Input__container">
+      <InputWithIcon icon={bill} label="bill" />
+      <div className="Button__container">
         <Button symbol="5%" />
         <Button symbol="10%" />
         <Button symbol="15%" />
         <Button symbol="25%" />
         <Button symbol="50%" />
       </div>
-      <Amount icon="people" title="people" />
-    </>
+      <InputWithIcon icon={person} label="Number Of People" />
+    </div>
   );
 };
