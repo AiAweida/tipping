@@ -1,5 +1,16 @@
 import * as React from "react";
-const Output: React.FC<{ type: string }> = ({ type }) => {
-  return <input type="text" id={type} value={type} />;
+import "./index.css";
+const OutPutText: React.FC<{
+  title: string;
+  value: string;
+}> = ({ title, value }) => {
+  return (
+    <div className="OutputText">
+      <label>{title}</label>
+
+      <span>/person</span>
+      <p dir="rtl ">{value}</p>
+    </div>
+  );
 };
-export default Output;
+export default OutPutText;

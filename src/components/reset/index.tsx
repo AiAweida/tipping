@@ -1,10 +1,14 @@
-import * as React from "react";
-const Reset: React.FC<{}> = () => {
-  const onButtonClicked = () => {};
+import React from "react";
+import "./index.css";
 
+interface ResetProps {
+  reset: (newValue: string) => void;
+}
+
+const Reset: React.FC<ResetProps> = ({ reset }) => {
   return (
-    <button className="Button" onClick={onButtonClicked}>
-      reset
+    <button className="Reset" onClick={() => reset("$0")}>
+      Reset
     </button>
   );
 };
