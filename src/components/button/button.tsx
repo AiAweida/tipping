@@ -3,11 +3,20 @@ import "./index.css";
 interface functionProps {
   symbol: string;
   value: number;
-  total: (newValue: number) => void;
+  people: number;
 }
-const Button: React.FC<functionProps> = ({ symbol, value, total }) => {
+const Button: React.FC<functionProps> = ({ symbol, value, people }) => {
   return (
-    <button id={symbol} className="Button" onClick={() => total} value={value}>
+    <button
+      id={symbol}
+      className="Button"
+      onClick={() => {
+        if (value === 0.5) {
+          console.log(0.5 * people);
+        }
+      }}
+      value={value}
+    >
       {symbol}
     </button>
   );

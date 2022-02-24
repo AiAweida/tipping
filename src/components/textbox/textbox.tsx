@@ -6,10 +6,10 @@ import "./index.css";
 interface textInput {
   icon?: string;
   label: string;
-
   iden: string;
+  valuee: number;
 }
-const TextInput: React.FC<textInput> = ({ icon, label, iden }) => {
+const TextInput: React.FC<textInput> = ({ valuee, icon, label, iden }) => {
   const [bill, setBill] = useState<number>(0);
   const [people, setPeople] = useState<number>(0);
 
@@ -17,11 +17,11 @@ const TextInput: React.FC<textInput> = ({ icon, label, iden }) => {
     <Box sx={{ "& > :not(style)": { m: 1 } }}>
       <TextField
         onChange={(e) => {
-          const { value } = e.target;
+          valuee = +e.target.value;
           if (iden === "person") {
-            setPeople(parseInt(value));
+            setPeople(valuee);
           } else {
-            setBill(parseInt(value));
+            setBill(valuee);
           }
         }}
         className="Text"
