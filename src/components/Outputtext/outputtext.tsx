@@ -2,7 +2,7 @@ import * as React from "react";
 import "./index.css";
 const OutPutText: React.FC<{
   title: string;
-  value: string;
+  value: number;
 }> = ({ title, value }) => {
   return (
     <div className="OutputText">

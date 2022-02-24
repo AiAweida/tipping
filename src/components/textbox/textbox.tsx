@@ -3,19 +3,31 @@ import Box from "@mui/material/Box";
 import InputAdornment from "@mui/material/InputAdornment";
 import TextField from "@mui/material/TextField";
 import "./index.css";
-const InputWithIcon: React.FC<{ icon?: string; label: string }> = ({
-  icon,
-  label,
-}) => {
-  const [valueFromState, setValueFromState] = useState({});
+interface textInput {
+  icon?: string;
+  label: string;
+
+  iden: string;
+}
+const TextInput: React.FC<textInput> = ({ icon, label, iden }) => {
+  const [bill, setBill] = useState<number>(0);
+  const [people, setPeople] = useState<number>(0);
+
   return (
     <Box sx={{ "& > :not(style)": { m: 1 } }}>
       <TextField
-        onChange={(e) => setValueFromState(e.target.value)}
+        onChange={(e) => {
+          const { value } = e.target;
+          if (iden === "person") {
+            setPeople(parseInt(value));
+          } else {
+            setBill(parseInt(value));
+          }
+        }}
         className="Text"
-        value={valueFromState}
         type="number"
-        id="Inputwithicon"
+        value={iden === "bill" ? bill : people}
+        id={iden}
         label={label}
         dir="rtl"
         InputProps={{
@@ -30,4 +42,4 @@ const InputWithIcon: React.FC<{ icon?: string; label: string }> = ({
     </Box>
   );
 };
-export default InputWithIcon;
+export default TextInput;
