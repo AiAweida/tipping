@@ -7,21 +7,30 @@ interface textInput {
   icon?: string;
   label: string;
   iden: string;
-  valuee: number;
+  value: number;
+  tempo: (newValue: number) => void;
 }
-const TextInput: React.FC<textInput> = ({ valuee, icon, label, iden }) => {
+const TextInput: React.FC<textInput> = ({
+  tempo,
+  value,
+  icon,
+  label,
+  iden,
+}) => {
   const [bill, setBill] = useState<number>(0);
   const [people, setPeople] = useState<number>(0);
-
   return (
     <Box sx={{ "& > :not(style)": { m: 1 } }}>
       <TextField
         onChange={(e) => {
-          valuee = +e.target.value;
           if (iden === "person") {
-            setPeople(valuee);
+            value = +e.target.value;
+            tempo(value);
+            setPeople(value);
           } else {
-            setBill(valuee);
+            value = +e.target.value;
+            tempo(value);
+            setBill(value);
           }
         }}
         className="Text"

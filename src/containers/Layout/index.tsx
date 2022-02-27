@@ -7,39 +7,87 @@ import Custom from "Components/Custom/custom";
 import OutPutText from "Components/Outputtext/outputtext";
 import Reset from "Components/reset/reset";
 import "App.css";
+import { Percent } from "@mui/icons-material";
 interface buttonprops {}
 export const InputLayout: React.FC<buttonprops> = () => {
-  // const [tipAmount, setTipAmount] = useState(1);
-  const [perPerson, setperPerson] = useState(3);
-  const [total, setTotal] = useState(1);
-  const [people, setPeoaple] = useState<number>(2);
+  let [perPerson, setperPerson] = useState<number>(0); //perperson to pay
+  let [total, setTotal] = useState<number>(0); // total tip ammount
+  let [people, setPeoaple] = useState<number>(0); // how many people
+  let [bill, setBill] = useState<number>(0); // the bill
   //for reset
   const resetCallback = (resetValue: number) => {
     setperPerson(resetValue);
     setTotal(resetValue);
   };
-  const tipcal = (tipvalue: number) => {
-    setPeoaple(tipvalue);
-    return people;
+
+  const takeBill = (x: number) => {
+    setBill(x);
+  };
+
+  const takepeople = (p: number) => {
+    setPeoaple(p);
+  };
+  const calculateTip = (x: number) => {
+    setTotal(x);
+    setperPerson(x / people);
   };
 
   return (
     <div className="Container">
       <div className="Input__container">
-        <TextInput valuee={people} icon={Bill} label="bill" iden="bill" />
+        <TextInput
+          tempo={takeBill}
+          value={bill}
+          icon={Bill}
+          label="bill"
+          iden="bill"
+        />
         <p>Select Tip %</p>
         <div className="Button__container">
-          <Button people={people} symbol="5%" value={0.05} />
-          <Button people={people} symbol="10%" value={0.1} />
-          <Button people={people} symbol="15%" value={0.15} />
-          <Button people={people} symbol="25%" value={0.25} />
-          <Button people={people} symbol="50%" value={0.5} />
+          <Button
+            peopleValue={people}
+            total={calculateTip}
+            symbol="5%"
+            percentage={0.05}
+            billValue={bill}
+          />
+          <Button
+            peopleValue={people}
+            total={calculateTip}
+            symbol="10%"
+            percentage={0.1}
+            billValue={bill}
+          />
+          <Button
+            peopleValue={people}
+            total={calculateTip}
+            symbol="15%"
+            percentage={0.15}
+            billValue={bill}
+          />
+
+          <Button
+            peopleValue={people}
+            total={calculateTip}
+            symbol="25%"
+            percentage={0.25}
+            billValue={bill}
+          />
+
+          <Button
+            peopleValue={people}
+            total={calculateTip}
+            billValue={bill}
+            symbol="50%"
+            percentage={0.5}
+          />
           <Custom />
         </div>
         <TextInput
-          valuee={people}
+          tempo={takepeople}
+          value={people}
           icon={person}
-          label="Number Of People"
+          label="person"
           iden="person"
         />
       </div>
