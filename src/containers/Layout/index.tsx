@@ -7,7 +7,6 @@ import Custom from "Components/Custom/custom";
 import OutPutText from "Components/Outputtext/outputtext";
 import Reset from "Components/reset/reset";
 import "App.css";
-import { Percent } from "@mui/icons-material";
 interface buttonprops {}
 export const InputLayout: React.FC<buttonprops> = () => {
   let [perPerson, setperPerson] = useState<number>(0); //perperson to pay
@@ -45,21 +44,18 @@ export const InputLayout: React.FC<buttonprops> = () => {
         <p>Select Tip %</p>
         <div className="Button__container">
           <Button
-            peopleValue={people}
             total={calculateTip}
             symbol="5%"
             percentage={0.05}
             billValue={bill}
           />
           <Button
-            peopleValue={people}
             total={calculateTip}
             symbol="10%"
             percentage={0.1}
             billValue={bill}
           />
           <Button
-            peopleValue={people}
             total={calculateTip}
             symbol="15%"
             percentage={0.15}
@@ -67,7 +63,6 @@ export const InputLayout: React.FC<buttonprops> = () => {
           />
 
           <Button
-            peopleValue={people}
             total={calculateTip}
             symbol="25%"
             percentage={0.25}
@@ -75,7 +70,6 @@ export const InputLayout: React.FC<buttonprops> = () => {
           />
 
           <Button
-            peopleValue={people}
             total={calculateTip}
             billValue={bill}
             symbol="50%"
@@ -88,7 +82,7 @@ export const InputLayout: React.FC<buttonprops> = () => {
           value={people}
           icon={person}
           label="person"
-          iden="person"
+          iden="people"
         />
       </div>
       <div className="Output__Container">

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import Box from "@mui/material/Box";
 import InputAdornment from "@mui/material/InputAdornment";
 import TextField from "@mui/material/TextField";
@@ -17,25 +17,21 @@ const TextInput: React.FC<textInput> = ({
   label,
   iden,
 }) => {
-  const [bill, setBill] = useState<number>(0);
-  const [people, setPeople] = useState<number>(0);
   return (
     <Box sx={{ "& > :not(style)": { m: 1 } }}>
       <TextField
         onChange={(e) => {
-          if (iden === "person") {
+          if (iden === "people") {
             value = +e.target.value;
             tempo(value);
-            setPeople(value);
           } else {
             value = +e.target.value;
             tempo(value);
-            setBill(value);
           }
         }}
         className="Text"
         type="number"
-        value={iden === "bill" ? bill : people}
+        value={value}
         id={iden}
         label={label}
         dir="rtl"
