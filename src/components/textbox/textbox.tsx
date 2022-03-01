@@ -21,20 +21,15 @@ const TextInput: React.FC<textInput> = ({
     <Box sx={{ "& > :not(style)": { m: 1 } }}>
       <TextField
         onChange={(e) => {
-          if (iden === "people") {
-            value = +e.target.value;
-            tempo(value);
-          } else {
-            value = +e.target.value;
-            tempo(value);
-          }
+          value = +e.target.value;
+          tempo(value);
         }}
         className="Text"
         type="number"
         value={value}
         id={iden}
         label={label}
-        dir="rtl"
+        // dir="rtl"
         InputProps={{
           startAdornment: (
             <InputAdornment position="start">

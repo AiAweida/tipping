@@ -9,26 +9,35 @@ import Reset from "Components/reset/reset";
 import "App.css";
 interface buttonprops {}
 export const InputLayout: React.FC<buttonprops> = () => {
-  let [perPerson, setperPerson] = useState<number>(0); //perperson to pay
+  let [customPercentage, setCustomPercentage] = useState<number>(0); // custom percentage
+  let [perPerson, setperPerson] = useState<number>(0); //perperson to tip
   let [total, setTotal] = useState<number>(0); // total tip ammount
-  let [people, setPeoaple] = useState<number>(0); // how many people
-  let [bill, setBill] = useState<number>(0); // the bill
+  let [people, setPeoaple] = useState<number>(0); // how many people passed from child as props
+  let [bill, setBill] = useState<number>(0); // the bill passed as props from child
   //for reset
   const resetCallback = (resetValue: number) => {
     setperPerson(resetValue);
     setTotal(resetValue);
   };
-
+  // setting bill in the state and passed as props from the child
   const takeBill = (x: number) => {
     setBill(x);
   };
-
+  // sets the people count in the state and passed as a props from the child
   const takepeople = (p: number) => {
     setPeoaple(p);
   };
+  // pass from child as props to calculate the tip ammount
   const calculateTip = (x: number) => {
     setTotal(x);
     setperPerson(x / people);
+  };
+  const setUserInput = (u: number) => {
+    setCustomPercentage(u);
+  };
+  const customTip = (c: number) => {
+    setTotal(c);
+    setperPerson(c / people);
   };
 
   return (
@@ -75,7 +84,12 @@ export const InputLayout: React.FC<buttonprops> = () => {
             symbol="50%"
             percentage={0.5}
           />
-          <Custom />
+          <Custom
+            valueOfBill={bill}
+            totalForTip={customTip}
+            userPercentage={setUserInput}
+            userInput={customPercentage}
+          />
         </div>
         <TextInput
           tempo={takepeople}

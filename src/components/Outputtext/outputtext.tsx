@@ -1,9 +1,10 @@
 import * as React from "react";
 import "./index.css";
-const OutPutText: React.FC<{
+interface output {
   title: string;
   value: number;
-}> = ({ title, value }) => {
+}
+const OutPutText: React.FC<output> = ({ title, value }) => {
   return (
     <div className="OutputText">
       <label>{title}</label>
