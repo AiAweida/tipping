@@ -9,8 +9,14 @@ interface textInput {
   iden: string;
   value: number;
   tempo: (newValue: number) => void;
+  userInput: number;
+  valueOfBill: number;
+  totalForTip: (totalValue: number) => void;
 }
 const TextInput: React.FC<textInput> = ({
+  userInput,
+  valueOfBill,
+  totalForTip,
   tempo,
   value,
   icon,
@@ -21,17 +27,29 @@ const TextInput: React.FC<textInput> = ({
     <Box sx={{ "& > :not(style)": { m: 1 } }}>
       <TextField
         onChange={(e) => {
-          value = +e.target.value;
-          tempo(value);
+          if (value >= 0) {
+            value = +e.target.value;
+            tempo(value);
+          } else {
+            value = 0;
+            alert("Please Insert A Positive Number! ");
+          }
+        }}
+        onKeyPress={(e) => {
+          if (e.code === "Enter") {
+            totalForTip(valueOfBill * (userInput / 100));
+          } else if (e.code === "NumpadEnter") {
+            totalForTip(valueOfBill * (userInput / 100));
+          }
         }}
         className="Text"
-        type="number"
+        type="text"
         value={value}
         id={iden}
         label={label}
-        // dir="rtl"
+        dir="rtl"
         InputProps={{
-          startAdornment: (
+          endAdornment: (
             <InputAdornment position="start">
               <img src={icon} alt={label} />
             </InputAdornment>

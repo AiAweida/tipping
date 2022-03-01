@@ -44,6 +44,9 @@ export const InputLayout: React.FC<buttonprops> = () => {
     <div className="Container">
       <div className="Input__container">
         <TextInput
+          userInput={customPercentage}
+          totalForTip={customTip}
+          valueOfBill={bill}
           tempo={takeBill}
           value={bill}
           icon={Bill}
@@ -92,6 +95,9 @@ export const InputLayout: React.FC<buttonprops> = () => {
           />
         </div>
         <TextInput
+          userInput={customPercentage}
+          totalForTip={customTip}
+          valueOfBill={bill}
           tempo={takepeople}
           value={people}
           icon={person}

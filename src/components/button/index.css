@@ -6,3 +6,6 @@
   font-family: var(--Family);
   font-weight: bold;
 }
+.Button:focus {
+  background-color: var(--Strongcyan);
+}

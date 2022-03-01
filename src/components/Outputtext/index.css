@@ -1,7 +1,21 @@
 .OutputText {
-  font-size: 12px;
-  /* align-content: space-between; */
+  font-size: 24px;
+  position: relative;
+  color: var(--Strongcyan);
+  margin-bottom: 15px;
+  position: relative;
 }
 .OutputText p {
   direction: rtl;
+  position: relative;
+}
+.OutputText span {
+  font-size: 10px;
+  position: absolute;
+  color: grey;
+}
+.OutputText label {
+  font-size: 12px;
+  color: white;
+  position: relative;
 }

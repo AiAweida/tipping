@@ -8,7 +8,7 @@ interface functionProps {
 }
 const Custom: React.FC<functionProps> = ({
   userPercentage,
-  userInput = 1,
+  userInput,
   valueOfBill,
   totalForTip,
 }) => {
@@ -16,15 +16,17 @@ const Custom: React.FC<functionProps> = ({
     <>
       <input
         onChange={(e) => {
-          userInput = e.target.valueAsNumber;
+          userInput = +e.target.value;
           userPercentage(userInput);
         }}
-        onKeyPress={(e) => {
-          if (e.code === "Enter") {
+        onKeyDown={(e) => {
+          if (e.code === "NumpadEnter") {
+            totalForTip(valueOfBill * (userInput / 100));
+          } else if (e.code === "Enter") {
             totalForTip(valueOfBill * (userInput / 100));
           }
         }}
-        type="number"
+        type="text"
         className="Custom"
         placeholder="custom"
       />

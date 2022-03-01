@@ -7,7 +7,10 @@ interface output {
 const OutPutText: React.FC<output> = ({ title, value }) => {
   return (
     <div className="OutputText">
-      <label>{title}</label>
+      <label>
+        {title}
+        <br />
+      </label>
 
       <span>/person</span>
       <p dir="rtl ">{value}</p>

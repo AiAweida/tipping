@@ -2,13 +2,13 @@
   display: flex;
   background-color: var(--Lightgrayishcyan);
   flex-direction: column;
-  align-items: center;
+  /* align-items: center; */
 }
 
 .Input__container {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  /* align-items: center; */
   background-color: white;
   font-size: 10px;
   font-family: var(--Family);
@@ -21,9 +21,10 @@
 
 .Button__container {
   display: grid;
-  grid-template-rows: repeat(3, 40px);
-  grid-template-columns: repeat(2, 84px);
-  size: inherit;
+  grid-template-rows: repeat(3, 50px);
+  grid-template-columns: repeat(2, 200px);
+  align-content: space-between;
+  /* size: inherit; */
 }
 .Output__Container {
   display: flex;

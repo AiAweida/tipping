@@ -1,8 +1,9 @@
 .Custom {
   color: var(--Verydarkcyan);
-  font-family: var(--Family);
+  font-family: "Space Mono", monospace;
   font-weight: bold;
   background-color: var(--white);
   margin-left: 5%;
+  font-size: 24px;
   margin-bottom: 5%;
 }

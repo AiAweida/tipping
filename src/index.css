@@ -1,9 +1,9 @@
-@import url("https://fonts.google.com/specimen/Space+Mono");
+@import url("https://fonts.googleapis.com/css2?family=Space+Mono&display=swap");
 body {
   margin: 0;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  font-family: var(--Family);
+  font-family: "Space Mono", monospace;
   font-weight: bold;
   font-size: var(--Fontsize);
 }
@@ -21,6 +21,5 @@ code {
   --LightGrayishcyan: hsl(189, 41%, 97%);
   --White: hsl(0, 0%, 100%);
   --Fontsize: 24px;
-  --Family: "Space Mono" "(https://fonts.google.com/specimen/Space+Mono)";
   --Weights: 400, 500, 700;
 }

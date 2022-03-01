@@ -3,4 +3,7 @@
   color: var(--Verydarkcyan);
   font-family: var(--Family);
   font-weight: bold;
+  margin-top: 4%;
+  margin-bottom: 4%;
+  align-self: center;
 }
