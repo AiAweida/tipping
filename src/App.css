@@ -27,8 +27,6 @@
   /* size: inherit; */
 }
 .Output__Container {
-  display: flex;
-  flex-direction: column;
   font-family: var(--Family);
   color: var(--White);
   background-color: var(--Verydarkcyan);

@@ -11,43 +11,27 @@ interface buttonprops {}
 export const InputLayout: React.FC<buttonprops> = () => {
   let [customPercentage, setCustomPercentage] = useState<number>(0); // custom percentage
   let [perPerson, setperPerson] = useState<number>(0); //perperson to tip
-  let [total, setTotal] = useState<number>(0); // total tip ammount
+  let [total, setTotal] = useState<number>(0); // total tip ammount;
   let [people, setPeoaple] = useState<number>(0); // how many people passed from child as props
   let [bill, setBill] = useState<number>(0); // the bill passed as props from child
   //for reset
+  // useEffect --> run some code when some values are updated // dependencies array
   const resetCallback = (resetValue: number) => {
-    setperPerson(resetValue);
-    setTotal(resetValue);
+    perPerson = 0;
+    total = 0;
   };
-  // setting bill in the state and passed as props from the child
-  const takeBill = (x: number) => {
-    setBill(x);
+  let calculateTip = () => {
+    total = bill * customPercentage;
+    perPerson = total / people;
+    setTotal(total);
+    setperPerson(perPerson);
   };
-  // sets the people count in the state and passed as a props from the child
-  const takepeople = (p: number) => {
-    setPeoaple(p);
-  };
-  // pass from child as props to calculate the tip ammount
-  const calculateTip = (x: number) => {
-    setTotal(x);
-    setperPerson(x / people);
-  };
-  const setUserInput = (u: number) => {
-    setCustomPercentage(u);
-  };
-  const customTip = (c: number) => {
-    setTotal(c);
-    setperPerson(c / people);
-  };
-
   return (
     <div className="Container">
       <div className="Input__container">
         <TextInput
-          userInput={customPercentage}
-          totalForTip={customTip}
-          valueOfBill={bill}
-          tempo={takeBill}
+          totalForTip={calculateTip}
+          userSetBill={(value) => setBill(value)}
           value={bill}
           icon={Bill}
           label="bill"
@@ -56,49 +40,45 @@ export const InputLayout: React.FC<buttonprops> = () => {
         <p>Select Tip %</p>
         <div className="Button__container">
           <Button
-            total={calculateTip}
+            calculateTip={calculateTip}
             symbol="5%"
             percentage={0.05}
-            billValue={bill}
+            setTipPercentage={setCustomPercentage}
           />
           <Button
-            total={calculateTip}
+            calculateTip={calculateTip}
             symbol="10%"
             percentage={0.1}
-            billValue={bill}
+            setTipPercentage={setCustomPercentage}
           />
           <Button
-            total={calculateTip}
+            calculateTip={calculateTip}
             symbol="15%"
             percentage={0.15}
-            billValue={bill}
+            setTipPercentage={setCustomPercentage}
           />
-
           <Button
-            total={calculateTip}
+            calculateTip={calculateTip}
             symbol="25%"
             percentage={0.25}
-            billValue={bill}
+            setTipPercentage={setCustomPercentage}
           />
-
           <Button
-            total={calculateTip}
-            billValue={bill}
+            calculateTip={calculateTip}
             symbol="50%"
             percentage={0.5}
+            setTipPercentage={setCustomPercentage}
           />
+
           <Custom
-            valueOfBill={bill}
-            totalForTip={customTip}
-            userPercentage={setUserInput}
-            userInput={customPercentage}
+            userPercentage={(value) => setCustomPercentage(value)}
+            value={customPercentage}
+            totalForTip={calculateTip}
           />
         </div>
         <TextInput
-          userInput={customPercentage}
-          totalForTip={customTip}
-          valueOfBill={bill}
-          tempo={takepeople}
+          totalForTip={calculateTip}
+          userSetBill={(value) => setPeoaple(value)}
           value={people}
           icon={person}
           label="person"

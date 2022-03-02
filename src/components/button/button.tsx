@@ -3,23 +3,28 @@ import "./index.css";
 interface functionProps {
   symbol: string;
   percentage: number;
-  billValue: number;
-  total: (newValue: number) => void;
+  setTipPercentage: (newValue: number) => void;
+  calculateTip: () => void;
 }
 const Button: React.FC<functionProps> = ({
-  total,
+  calculateTip,
   symbol,
-
-  billValue,
   percentage,
+  setTipPercentage,
 }) => {
   return (
     <button
       id={symbol}
       className="Button"
       value={percentage}
-      onClick={() => {
-        total(billValue * percentage);
+      onMouseDownCapture={() => {
+        setTipPercentage(percentage);
+      }}
+      onMouseDown={() => {
+        calculateTip();
+      }}
+      onChange={() => {
+        calculateTip();
       }}
     >
       {symbol}

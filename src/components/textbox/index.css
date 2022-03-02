@@ -5,4 +5,5 @@
   font-weight: bold;
   border-radius: 1%;
   size: 100%;
+  unicode-bidi: bidi-override;
 }

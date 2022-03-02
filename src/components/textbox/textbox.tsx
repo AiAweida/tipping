@@ -8,16 +8,12 @@ interface textInput {
   label: string;
   iden: string;
   value: number;
-  tempo: (newValue: number) => void;
-  userInput: number;
-  valueOfBill: number;
+  userSetBill: (newValue: number) => void;
   totalForTip: (totalValue: number) => void;
 }
 const TextInput: React.FC<textInput> = ({
-  userInput,
-  valueOfBill,
   totalForTip,
-  tempo,
+  userSetBill,
   value,
   icon,
   label,
@@ -29,19 +25,14 @@ const TextInput: React.FC<textInput> = ({
         onChange={(e) => {
           if (value >= 0) {
             value = +e.target.value;
-            tempo(value);
+            userSetBill(value);
+            totalForTip(value);
           } else {
             value = 0;
             alert("Please Insert A Positive Number! ");
           }
         }}
-        onKeyPress={(e) => {
-          if (e.code === "Enter") {
-            totalForTip(valueOfBill * (userInput / 100));
-          } else if (e.code === "NumpadEnter") {
-            totalForTip(valueOfBill * (userInput / 100));
-          }
-        }}
+        onKeyUp={() => {}}
         className="Text"
         type="text"
         value={value}

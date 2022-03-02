@@ -1,35 +1,35 @@
-import React from "react";
+import React, { FormEventHandler, SyntheticEvent } from "react";
 import "./index.css";
 interface functionProps {
   userPercentage: (newValue: number) => void;
-  userInput: number;
-  valueOfBill: number;
+  value: number;
   totalForTip: (totalValue: number) => void;
 }
 const Custom: React.FC<functionProps> = ({
   userPercentage,
-  userInput,
-  valueOfBill,
+  value,
   totalForTip,
 }) => {
+  const handleSubmit: FormEventHandler<HTMLFormElement> = (e) => {
+    e.preventDefault();
+    console.log("value");
+  };
   return (
     <>
-      <input
-        onChange={(e) => {
-          userInput = +e.target.value;
-          userPercentage(userInput);
-        }}
-        onKeyDown={(e) => {
-          if (e.code === "NumpadEnter") {
-            totalForTip(valueOfBill * (userInput / 100));
-          } else if (e.code === "Enter") {
-            totalForTip(valueOfBill * (userInput / 100));
-          }
-        }}
-        type="text"
-        className="Custom"
-        placeholder="custom"
-      />
+      <form onSubmit={handleSubmit}>
+        <input
+          onChange={(e) => {
+            value = +e.target.value / 100;
+            userPercentage(value);
+          }}
+          onKeyUp={() => {
+            totalForTip(value);
+          }}
+          type="text"
+          className="Custom"
+          placeholder="custom"
+        />
+      </form>
     </>
   );
 };
