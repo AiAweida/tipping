@@ -4,10 +4,8 @@ interface functionProps {
   symbol: string;
   percentage: number;
   setTipPercentage: (newValue: number) => void;
-  calculateTip: () => void;
 }
 const Button: React.FC<functionProps> = ({
-  calculateTip,
   symbol,
   percentage,
   setTipPercentage,
@@ -19,12 +17,6 @@ const Button: React.FC<functionProps> = ({
       value={percentage}
       onMouseDownCapture={() => {
         setTipPercentage(percentage);
-      }}
-      onMouseDown={() => {
-        calculateTip();
-      }}
-      onChange={() => {
-        calculateTip();
       }}
     >
       {symbol}

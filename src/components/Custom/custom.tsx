@@ -3,13 +3,8 @@ import "./index.css";
 interface functionProps {
   userPercentage: (newValue: number) => void;
   value: number;
-  totalForTip: () => void;
 }
-const Custom: React.FC<functionProps> = ({
-  userPercentage,
-  value,
-  totalForTip,
-}) => {
+const Custom: React.FC<functionProps> = ({ userPercentage, value }) => {
   const handleSubmit: FormEventHandler<HTMLFormElement> = (e) => {
     e.preventDefault();
     console.log("value");
@@ -22,9 +17,7 @@ const Custom: React.FC<functionProps> = ({
             value = +e.target.value / 100;
             userPercentage(value);
           }}
-          onKeyUp={() => {
-            totalForTip();
-          }}
+          // onKeyUp={() => {}}
           type="text"
           className="Custom"
           placeholder="custom"

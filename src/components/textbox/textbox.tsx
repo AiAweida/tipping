@@ -9,10 +9,8 @@ interface textInput {
   iden: string;
   value: number;
   userSetBill: (newValue: number) => void;
-  totalForTip: () => void;
 }
 const TextInput: React.FC<textInput> = ({
-  totalForTip,
   userSetBill,
   value,
   icon,
@@ -32,7 +30,7 @@ const TextInput: React.FC<textInput> = ({
           }
         }}
         onKeyUp={() => {
-          totalForTip();
+          // totalForTip();
         }}
         className="Text"
         type="text"
