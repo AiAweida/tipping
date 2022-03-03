@@ -10,6 +10,7 @@ interface textInput {
   value: number;
   userSetBill: (newValue: number) => void;
 }
+const handleFocus = (event: any) => event.target.select();
 const TextInput: React.FC<textInput> = ({
   userSetBill,
   value,
@@ -21,17 +22,20 @@ const TextInput: React.FC<textInput> = ({
     <Box sx={{ "& > :not(style)": { m: 1 } }}>
       <TextField
         onChange={(e) => {
-          if (value >= 0) {
-            value = +e.target.value;
-            userSetBill(value);
-          } else {
-            value = 0;
-            alert("Please Insert A Positive Number! ");
-          }
+          value = +e.target.value;
+          userSetBill(value);
         }}
         onKeyUp={() => {
-          // totalForTip();
+          if (value >= 0 && iden === "bill") {
+            userSetBill(value);
+          } else if (value >= 0 && iden === "people") {
+            userSetBill(value);
+          } else {
+            alert("Please Insert A Vailed number of " + iden);
+            userSetBill(1);
+          }
         }}
+        onClick={handleFocus}
         className="Text"
         type="text"
         value={value}

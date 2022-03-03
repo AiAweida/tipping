@@ -12,7 +12,7 @@ export const InputLayout: React.FC<buttonprops> = () => {
   let [customPercentage, setCustomPercentage] = useState<number>(0); // custom percentage
   let [perPerson, setperPerson] = useState<number>(0); //perperson to tip
   let [total, setTotal] = useState<number>(0); // total tip ammount;
-  let [people, setPeoaple] = useState<number>(0); // how many people passed from child as props
+  let [people, setPeoaple] = useState<number>(1); // how many people passed from child as props
   let [bill, setBill] = useState<number>(0); // the bill passed as props from child
   //for reset
   const resetCallback = (resetValue: number) => {

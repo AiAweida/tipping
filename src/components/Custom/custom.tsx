@@ -4,6 +4,7 @@ interface functionProps {
   userPercentage: (newValue: number) => void;
   value: number;
 }
+const handleFocus = (event: any) => event.target.select();
 const Custom: React.FC<functionProps> = ({ userPercentage, value }) => {
   const handleSubmit: FormEventHandler<HTMLFormElement> = (e) => {
     e.preventDefault();
@@ -17,7 +18,7 @@ const Custom: React.FC<functionProps> = ({ userPercentage, value }) => {
             value = +e.target.value / 100;
             userPercentage(value);
           }}
-          // onKeyUp={() => {}}
+          onClick={handleFocus}
           type="text"
           className="Custom"
           placeholder="custom"
