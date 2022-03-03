@@ -3,7 +3,7 @@ import "./index.css";
 interface functionProps {
   userPercentage: (newValue: number) => void;
   value: number;
-  totalForTip: (totalValue: number) => void;
+  totalForTip: () => void;
 }
 const Custom: React.FC<functionProps> = ({
   userPercentage,
@@ -23,7 +23,7 @@ const Custom: React.FC<functionProps> = ({
             userPercentage(value);
           }}
           onKeyUp={() => {
-            totalForTip(value);
+            totalForTip();
           }}
           type="text"
           className="Custom"

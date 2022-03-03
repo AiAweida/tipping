@@ -17,8 +17,8 @@ export const InputLayout: React.FC<buttonprops> = () => {
   //for reset
   // useEffect --> run some code when some values are updated // dependencies array
   const resetCallback = (resetValue: number) => {
-    perPerson = 0;
-    total = 0;
+    setperPerson(resetValue);
+    setTotal(resetValue);
   };
   let calculateTip = () => {
     total = bill * customPercentage;

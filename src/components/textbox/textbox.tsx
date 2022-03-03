@@ -9,7 +9,7 @@ interface textInput {
   iden: string;
   value: number;
   userSetBill: (newValue: number) => void;
-  totalForTip: (totalValue: number) => void;
+  totalForTip: () => void;
 }
 const TextInput: React.FC<textInput> = ({
   totalForTip,
@@ -26,13 +26,14 @@ const TextInput: React.FC<textInput> = ({
           if (value >= 0) {
             value = +e.target.value;
             userSetBill(value);
-            totalForTip(value);
           } else {
             value = 0;
             alert("Please Insert A Positive Number! ");
           }
         }}
-        onKeyUp={() => {}}
+        onKeyUp={() => {
+          totalForTip();
+        }}
         className="Text"
         type="text"
         value={value}
