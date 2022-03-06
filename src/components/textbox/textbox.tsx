@@ -40,7 +40,6 @@ const TextInput: React.FC<textInput> = ({
         type="text"
         value={value}
         id={iden}
-        label={label}
         dir="rtl"
         InputProps={{
           endAdornment: (

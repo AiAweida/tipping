@@ -4,7 +4,7 @@ interface output {
   title: string;
   value: number;
 }
-const OutPutText: React.FC<output> = ({ title, value }) => {
+export const OutPutText: React.FC<output> = ({ title, value }) => {
   return (
     <div className="OutputText">
       <label>
@@ -12,9 +12,8 @@ const OutPutText: React.FC<output> = ({ title, value }) => {
         <br />
       </label>
 
-      <span>/person</span>
+      <span>/Person</span>
       <p dir="rtl ">{value}</p>
     </div>
   );
 };
-export default OutPutText;

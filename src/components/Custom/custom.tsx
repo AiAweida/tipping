@@ -1,4 +1,4 @@
-import React, { FormEventHandler, SyntheticEvent } from "react";
+import React, { FormEventHandler } from "react";
 import "./index.css";
 interface functionProps {
   userPercentage: (newValue: number) => void;
