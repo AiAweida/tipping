@@ -12,16 +12,19 @@ function App() {
     setperPerson(personToPay);
     setTotal(totaltopay);
   };
-
+  const resetcallback = (newValue: number) => {
+    setTotal(newValue);
+    setperPerson(newValue);
+  };
   return (
     <div className="App">
       <Header />
-      <InputLayout
-        totaltipped={total}
-        payperperson={perPerson}
-        setvalues={getvalues}
+      <InputLayout setvalues={getvalues} />
+      <OutputLayout
+        totaltopay={total}
+        perpersontopay={perPerson}
+        reset={resetcallback}
       />
-      <OutputLayout totaltopay={total} perpersontopay={perPerson} />
     </div>
   );
 }

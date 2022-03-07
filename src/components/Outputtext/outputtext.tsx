@@ -11,7 +11,6 @@ export const OutPutText: React.FC<output> = ({ title, value }) => {
         {title}
         <br />
       </label>
-
       <span>/Person</span>
       <p dir="rtl ">{value}</p>
     </div>

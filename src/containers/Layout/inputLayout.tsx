@@ -7,15 +7,9 @@ import Bill from "images/dollar.svg";
 import Custom from "Components/Custom/custom";
 import "App.css";
 interface buttonprops {
-  totaltipped: number;
-  payperperson: number;
-  setvalues: (newvalue: number, second: number) => void;
+  setvalues: (total1: number, perperson1: number) => void;
 }
-export const InputLayout: React.FC<buttonprops> = ({
-  totaltipped,
-  payperperson,
-  setvalues,
-}) => {
+export const InputLayout: React.FC<buttonprops> = ({ setvalues }) => {
   let [customPercentage, setCustomPercentage] = useState<number>(0); // custom percentage
   let [perPerson, setperPerson] = useState<number>(0); //perperson to tip
   let [total, setTotal] = useState<number>(0); // total tip ammount;

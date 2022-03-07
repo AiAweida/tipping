@@ -8,7 +8,6 @@ const handleFocus = (event: any) => event.target.select();
 const Custom: React.FC<functionProps> = ({ userPercentage, value }) => {
   const handleSubmit: FormEventHandler<HTMLFormElement> = (e) => {
     e.preventDefault();
-    console.log("value");
   };
   return (
     <>

@@ -1,9 +1,9 @@
 .Text {
-  color: var(--Verydarkcyan);
-  background-color: var(--White);
-  font-family: var(--Family);
-  font-weight: bold;
-  border-radius: 1%;
-  size: 100%;
-  unicode-bidi: bidi-override;
+  color: var(--Verydarkcyan) !important;
+  background-color: var(--White) !important;
+  font-family: var(--Family) !important;
+  font-weight: bold !important;
+  border-radius: 1% !important;
+  size: 100% !important;
+  unicode-bidi: bidi-override !important;
 }
