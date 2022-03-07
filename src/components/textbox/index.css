@@ -1,9 +1,14 @@
-.Text {
+.MuiOutlinedInput-input {
   color: var(--Verydarkcyan) !important;
-  background-color: var(--White) !important;
-  font-family: var(--Family) !important;
+  font-family: monospace !important;
   font-weight: bold !important;
-  border-radius: 1% !important;
-  size: 100% !important;
-  unicode-bidi: bidi-override !important;
+  padding: 0 50%;
+  width: 100%;
+}
+.MuiOutlinedInput-root {
+  background-color: var(--Lightgrayishcyan) !important;
+  border-color: var(--Strongcyan);
+}
+.Mui-focused::after {
+  border-color: var(--Strongcyan);
 }

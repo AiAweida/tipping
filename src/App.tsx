@@ -19,12 +19,14 @@ function App() {
   return (
     <div className="App">
       <Header />
-      <InputLayout setvalues={getvalues} />
-      <OutputLayout
-        totaltopay={total}
-        perpersontopay={perPerson}
-        reset={resetcallback}
-      />
+      <div className="flexdir">
+        <InputLayout setvalues={getvalues} />
+        <OutputLayout
+          totaltopay={total}
+          perpersontopay={perPerson}
+          reset={resetcallback}
+        />
+      </div>
     </div>
   );
 }

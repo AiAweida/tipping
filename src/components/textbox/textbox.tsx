@@ -36,7 +36,6 @@ const TextInput: React.FC<textInput> = ({
           }
         }}
         onClick={handleFocus}
-        className="Text"
         type="text"
         value={value}
         id={iden}
@@ -48,7 +47,7 @@ const TextInput: React.FC<textInput> = ({
             </InputAdornment>
           ),
         }}
-        variant="filled"
+        variant="outlined"
       />
     </Box>
   );

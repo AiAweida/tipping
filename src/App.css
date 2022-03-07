@@ -3,8 +3,6 @@
   font-size: 10px;
   color: grey;
   margin: 0;
-  display: flex;
-  flex-flow: column;
 }
 
 .Input__container p {
@@ -20,4 +18,10 @@
   font-family: var(--Family);
   color: var(--White);
   background-color: var(--Verydarkcyan);
+}
+@media only screen and (min-width: 1024) {
+  body {
+    display: flex;
+    flex-direction: row;
+  }
 }

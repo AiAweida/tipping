@@ -23,3 +23,10 @@ code {
   --Fontsize: 24px;
   --Weights: 400, 500, 700;
 }
+@media screen and (min-width: 1024px) {
+  .flexdir {
+    align-content: center;
+    display: flex;
+    flex-direction: row;
+  }
+}
