@@ -3,11 +3,11 @@ import "./index.css";
 interface ResetProps {
   reset: (value: number) => void;
 }
-const Reset: React.FC<ResetProps> = ({ reset }) => {
+export const Reset: React.FC<ResetProps> = ({ reset }) => {
   return (
     <button className="Reset" onClick={() => reset(0)}>
       Reset
     </button>
   );
 };
-export default Reset;
+// export default Reset;

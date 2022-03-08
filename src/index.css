@@ -1,12 +1,4 @@
 @import url("https://fonts.googleapis.com/css2?family=Space+Mono&display=swap");
-body {
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  font-family: "Space Mono", monospace;
-  font-weight: bold;
-  font-size: var(--Fontsize);
-  margin: 0;
-}
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
@@ -23,10 +15,8 @@ code {
   --Fontsize: 24px;
   --Weights: 400, 500, 700;
 }
-@media screen and (min-width: 1024px) {
-  .flexdir {
-    align-content: center;
-    display: flex;
-    flex-direction: row;
-  }
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
 }

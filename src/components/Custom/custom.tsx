@@ -1,8 +1,8 @@
 import React, { FormEventHandler } from "react";
 import "./index.css";
 interface functionProps {
-  userPercentage: (newValue: number) => void;
-  value: number;
+  userPercentage: (newsValue: string) => void;
+  value: string;
 }
 const handleFocus = (event: any) => event.target.select();
 const Custom: React.FC<functionProps> = ({ userPercentage, value }) => {
@@ -14,11 +14,12 @@ const Custom: React.FC<functionProps> = ({ userPercentage, value }) => {
       <form onSubmit={handleSubmit}>
         <input
           onChange={(e) => {
-            value = +e.target.value / 100;
+            value = e.target.value;
             userPercentage(value);
           }}
+          value={value}
           onClick={handleFocus}
-          type="text"
+          type="number"
           className="Custom"
           placeholder="custom"
         />

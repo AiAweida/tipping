@@ -1,5 +1,6 @@
 import { OutPutText } from "Components/Outputtext";
-import Reset from "Components/reset/reset";
+import { Reset } from "Components/reset/reset";
+import "./output.css";
 interface props {
   totaltopay: number;
   reset: (newValue: number) => void;

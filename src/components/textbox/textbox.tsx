@@ -40,6 +40,7 @@ const TextInput: React.FC<textInput> = ({
         value={value}
         id={iden}
         dir="rtl"
+        placeholder="Custom"
         InputProps={{
           endAdornment: (
             <InputAdornment position="start">

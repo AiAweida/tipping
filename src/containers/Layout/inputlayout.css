@@ -1,0 +1,9 @@
+.Button__container {
+  display: grid;
+  grid-template-columns: repeat(2, 150px);
+  grid-template-rows: repeat(3, 50px);
+}
+.Input__container p {
+  color: grey;
+  font-size: 8px;
+}

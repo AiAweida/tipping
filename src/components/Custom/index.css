@@ -1,10 +1,6 @@
 .Custom {
-  color: var(--Verydarkcyan);
-  font-family: "Space Mono", monospace;
-  font-weight: bold;
-  background-color: var(--white);
-  margin-left: 5%;
-  font-size: 18px;
-  margin-bottom: 5%;
-  width: 92%;
+  width: 94%;
+  height: 89%;
+  background-color: var(--LightGrayishcyan);
+  font-family: monospace;
 }

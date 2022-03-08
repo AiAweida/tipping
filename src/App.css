@@ -1,27 +1,14 @@
-.Input__container {
-  background-color: white;
-  font-size: 10px;
-  color: grey;
+.App {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-family: "Space Mono", monospace;
+  font-weight: bold;
+  /* font-size: var(--Fontsize); */
   margin: 0;
-}
-
-.Input__container p {
-  margin-left: 5%;
-}
-
-.Button__container {
+  background-color: var(--Lightgrayishcyan);
   display: grid;
-  grid-template-rows: repeat(3, 35%);
-  grid-template-columns: repeat(2, 48%);
+  justify-content: center;
 }
-.Output__Container {
-  font-family: var(--Family);
-  color: var(--White);
-  background-color: var(--Verydarkcyan);
-}
-@media only screen and (min-width: 1024) {
-  body {
-    display: flex;
-    flex-direction: row;
-  }
+.Container__in-out {
+  background-color: white;
 }

@@ -1,10 +1,4 @@
 .App__Header {
-  letter-spacing: 10px;
-  color: var(--Verydarkcyan);
-  font-family: var(--Family);
-  font-weight: bold;
   text-align: center;
-  padding-top: 5%;
-  padding-bottom: 5%;
-  background-color: var(--Lightgrayishcyan);
+  padding: 30px;
 }

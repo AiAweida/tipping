@@ -1,11 +1,10 @@
 .Button {
-  margin-bottom: 5%;
-  margin-left: 5%;
-  color: var(--White);
   background-color: var(--Verydarkcyan);
-  font-family: var(--Family);
+  font-family: monospace;
   font-weight: bold;
+  color: white;
 }
 .Button:focus {
   background-color: var(--Strongcyan);
+  color: var(--Verydarkcyan);
 }

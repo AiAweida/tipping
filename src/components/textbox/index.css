@@ -1,14 +1,11 @@
-.MuiOutlinedInput-input {
+.css-ittuaa-MuiInputAdornment-root {
+  padding-left: 10px;
+  font-family: monospace;
+}
+.css-o9k5xi-MuiInputBase-root-MuiOutlinedInput-root {
+  background-color: var(--LightGrayishcyan);
+}
+.css-nxo287-MuiInputBase-input-MuiOutlinedInput-input {
+  font-family: monospace;
   color: var(--Verydarkcyan) !important;
-  font-family: monospace !important;
-  font-weight: bold !important;
-  padding: 0 50%;
-  width: 100%;
-}
-.MuiOutlinedInput-root {
-  background-color: var(--Lightgrayishcyan) !important;
-  border-color: var(--Strongcyan);
-}
-.Mui-focused::after {
-  border-color: var(--Strongcyan);
 }
