@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Space+Mono&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Space+Mono:wght@700&display=swap");
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
@@ -12,8 +12,9 @@ code {
   --Lightgrayishcyan: hsl(185, 41%, 84%);
   --LightGrayishcyan: hsl(189, 41%, 97%);
   --White: hsl(0, 0%, 100%);
-  --Fontsize: 24px;
+  --Fontsize: 16px;
   --Weights: 400, 500, 700;
+  --FamilyFont: "Space Mono";
 }
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {

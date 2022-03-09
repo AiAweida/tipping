@@ -1,8 +1,11 @@
 .Button {
   background-color: var(--Verydarkcyan);
-  font-family: monospace;
+  font-family: var(--FamilyFont);
   font-weight: bold;
   color: white;
+  font-size: 24px;
+  border: none;
+  border-radius: 8px;
 }
 .Button:focus {
   background-color: var(--Strongcyan);

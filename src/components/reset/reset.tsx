@@ -5,7 +5,7 @@ interface ResetProps {
 }
 export const Reset: React.FC<ResetProps> = ({ reset }) => {
   return (
-    <button className="Reset" onClick={() => reset(0)}>
+    <button type="submit" className="Reset" onClick={() => reset(0)}>
       Reset
     </button>
   );

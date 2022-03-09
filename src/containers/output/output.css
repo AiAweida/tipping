@@ -1,3 +1,15 @@
 .Output__Container {
   background-color: var(--Verydarkcyan);
+  display: grid;
+  grid-row-gap: 40px;
+  border-radius: 10px;
+  padding: 30px;
+  grid-template-rows: repeat(2, max-content) auto;
+  margin-top: 10px;
+  margin-left: 15px;
+}
+@media screen and (min-width: 1024px) {
+  .Reset__Layout {
+    margin-top: 9.5em;
+  }
 }

@@ -25,21 +25,25 @@ export const InputLayout: React.FC<Buttonprops> = ({
   peopleNumber,
   customPercent,
 }) => {
-  let [customPercentage, setCustomPercentage] = useState(""); // custom percentage
-  let [perPerson, setperPerson] = useState<number>(0); //perperson to tip
-  let [total, setTotal] = useState<number>(0); // total tip ammount;
-  let [people, setPeoaple] = useState<number>(1); // how many people passed from child as props
-  let [bill, setBill] = useState<number>(0); // the bill passed as props from child
+  let [buttonValue, setButtonValue] = useState(0);
+  let [customPercentage, setCustomPercentage] = useState("");
+  let [perPerson, setperPerson] = useState<number>(0);
+  let [total, setTotal] = useState<number>(0);
+  let [people, setPeoaple] = useState<number>(1);
+  let [bill, setBill] = useState<number>(0);
+  let x;
   useEffect(() => {
-    total = bill * (parseInt(customPercentage) / 100);
+    x = parseInt(customPercent)
+      ? buttonValue
+      : parseInt(customPercentage) / 100;
+    total = x * bill;
     peopleNumber = people;
     perPerson = total / people;
     valueofbill = bill;
-    customPercent = customPercentage;
     setTotal(total);
     setperPerson(perPerson);
     setvalues(total, perPerson, bill, customPercentage, people);
-  }, [bill, people, customPercentage]); // this array reapplies to the dom when any of these values changes
+  }, [bill, people, customPercentage, buttonValue, x]);
 
   return (
     <div className="Container">
@@ -56,28 +60,28 @@ export const InputLayout: React.FC<Buttonprops> = ({
         <div className="Button__container">
           <Button
             symbol="5%"
-            percentage={"5"}
-            setTipPercentage={setCustomPercentage}
+            percentage={0.05}
+            setTipPercentage={setButtonValue}
           />
           <Button
             symbol="10%"
-            percentage={"10"}
-            setTipPercentage={setCustomPercentage}
+            percentage={0.1}
+            setTipPercentage={setButtonValue}
           />
           <Button
             symbol="15%"
-            percentage={"15"}
-            setTipPercentage={setCustomPercentage}
+            percentage={0.15}
+            setTipPercentage={setButtonValue}
           />
           <Button
             symbol="25%"
-            percentage={"25"}
-            setTipPercentage={setCustomPercentage}
+            percentage={0.25}
+            setTipPercentage={setButtonValue}
           />
           <Button
             symbol="50%"
-            percentage={"50"}
-            setTipPercentage={setCustomPercentage}
+            percentage={0.5}
+            setTipPercentage={setButtonValue}
           />
 
           <Custom

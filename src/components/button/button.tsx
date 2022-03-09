@@ -2,8 +2,8 @@ import * as React from "react";
 import "./index.css";
 interface functionProps {
   symbol: string;
-  percentage: string;
-  setTipPercentage: (newValue: string) => void;
+  percentage: number;
+  setTipPercentage: (newValue: number) => void;
 }
 const Button: React.FC<functionProps> = ({
   symbol,
@@ -15,7 +15,7 @@ const Button: React.FC<functionProps> = ({
       id={symbol}
       className="Button"
       value={percentage}
-      onMouseDownCapture={() => {
+      onClick={() => {
         setTipPercentage(percentage);
       }}
     >

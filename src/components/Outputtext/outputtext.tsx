@@ -7,12 +7,13 @@ interface output {
 export const OutPutText: React.FC<output> = ({ title, value }) => {
   return (
     <div className="OutputText">
-      <label>
-        {title}
-        <br />
-      </label>
-      <span>/Person</span>
-      <p dir="rtl ">{value}</p>
+      <div className="Output-title">
+        <h3>{title}</h3>
+        <p>/Person</p>
+      </div>
+      <div className="Value">
+        <p dir="rtl ">{value}</p>
+      </div>
     </div>
   );
 };

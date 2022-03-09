@@ -1,4 +1,7 @@
 .App__Header {
   text-align: center;
   padding: 30px;
+  color: var(--Verydarkcyan);
+  letter-spacing: 10px;
+  font-size: 24px;
 }
