@@ -13,3 +13,9 @@
 .Input__container {
   padding: inherit;
 }
+@media screen and (min-width: 1024px) {
+  .Button__container {
+    grid-template-rows: repeat(2, 50px);
+    grid-template-columns: repeat(3, calc(32% - 5px));
+  }
+}

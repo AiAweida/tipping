@@ -5,11 +5,19 @@ interface props {
   totaltopay: number;
   reset: (newValue: number) => void;
   perpersontopay: number;
+  gettheValues: (
+    totaltopay: number,
+    personToPay: number,
+    bill: number,
+    percentage: string,
+    people: number
+  ) => void;
 }
 export const OutputLayout: React.FC<props> = ({
   totaltopay,
   perpersontopay,
   reset,
+  gettheValues,
 }) => {
   return (
     <div className="Output__Container">

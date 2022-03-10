@@ -42,6 +42,7 @@ function App() {
           customPercent={custom}
         />
         <OutputLayout
+          gettheValues={getvalues}
           reset={resetcallback}
           totaltopay={total}
           perpersontopay={perPerson}
