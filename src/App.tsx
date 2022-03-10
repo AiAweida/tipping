@@ -46,6 +46,7 @@ function App() {
           reset={resetcallback}
           totaltopay={total}
           perpersontopay={perPerson}
+          bill={billed}
         />
       </main>
     </div>

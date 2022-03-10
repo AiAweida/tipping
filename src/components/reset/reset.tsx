@@ -14,7 +14,7 @@ export const Reset: React.FC<ResetProps> = ({ reset }) => {
   //     button.disabled = false;
   //   }
   // ;
-  let p;
+  let p: boolean;
   return (
     <button
       disabled={p}
