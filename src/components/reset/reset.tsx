@@ -6,10 +6,8 @@ interface ResetProps {
   people: number;
 }
 export const Reset: React.FC<ResetProps> = ({ reset, bill, people }) => {
-  let button = document.getElementById("resetButton");
   let buttonstatus: boolean;
-
-  if (bill > 0 && people > 1) {
+  if (bill > 0 && people > 0) {
     buttonstatus = false;
   } else {
     buttonstatus = true;
