@@ -5,19 +5,18 @@ interface ResetProps {
   bill: number;
   people: number;
 }
-export const Reset: React.FC<ResetProps> = ({ reset }) => {
+export const Reset: React.FC<ResetProps> = ({ reset, bill, people }) => {
   let button = document.getElementById("resetButton");
+  let buttonstatus: boolean;
 
-  //   if (input. == 0) {
-  //     button.disabled = true;
-  //   } else {
-  //     button.disabled = false;
-  //   }
-  // ;
-  let p: boolean;
+  if (bill > 0 && people > 1) {
+    buttonstatus = false;
+  } else {
+    buttonstatus = true;
+  }
   return (
     <button
-      disabled={p}
+      disabled={buttonstatus}
       type="submit"
       className="Reset"
       id="resetButton"
