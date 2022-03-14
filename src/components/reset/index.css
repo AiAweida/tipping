@@ -7,6 +7,11 @@
   font-weight: bold;
   font-family: monospace;
   color: var(--Verydarkcyan);
+  cursor: pointer;
+}
+.Reset:disabled {
+  background-color: var(--DarkGrayishcyan);
+  cursor: default;
 }
 @media screen and (min-wdith: 1024px) {
   .Reset {

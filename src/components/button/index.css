@@ -6,8 +6,12 @@
   font-size: 24px;
   border: none;
   border-radius: 8px;
+  cursor: pointer;
 }
 .Button:focus {
   background-color: var(--Strongcyan);
   color: var(--Verydarkcyan);
+}
+.Button:hover {
+  background-color: var(--Strongcyan);
 }

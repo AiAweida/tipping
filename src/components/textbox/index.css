@@ -11,6 +11,7 @@
   color: var(--Verydarkcyan) !important;
   padding: 11.5px 42px !important;
   font-size: 24px !important;
+  cursor: pointer;
 }
 
 .css-1u3bzj6-MuiFormControl-root-MuiTextField-root {

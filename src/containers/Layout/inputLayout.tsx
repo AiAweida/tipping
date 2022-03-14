@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useLayoutEffect } from "react";
 import Button from "Components/Button/button";
 import TextInput from "Components/Textbox/textbox";
 import person from "images/person.svg";
@@ -6,7 +6,6 @@ import Bill from "images/dollar.svg";
 import Custom from "Components/Custom/custom";
 import "./inputlayout.css";
 import "App.css";
-import { cleanup } from "@testing-library/react";
 interface Buttonprops {
   setvalues: (
     total: number,
@@ -26,17 +25,21 @@ export const InputLayout: React.FC<Buttonprops> = ({
   customPercent,
 }) => {
   let [buttonValue, setButtonValue] = useState(0);
-  let [customPercentage, setCustomPercentage] = useState("1");
+  let [customPercentage, setCustomPercentage] = useState("");
   let [perPerson, setperPerson] = useState<number>(0);
   let [total, setTotal] = useState<number>(0);
   let [people, setPeoaple] = useState<number>(1);
   let [bill, setBill] = useState<number>(0);
   let percentValue: number;
-  useEffect(() => {
+  useLayoutEffect(() => {
     if (customPercentage !== "") {
       percentValue = parseInt(customPercentage) / 100;
-    } else if (buttonValue > 0) {
+      setButtonValue(0);
+    }
+    if (buttonValue > 0) {
       percentValue = buttonValue;
+      setCustomPercentage("");
+      // setButtonValue(buttonValue);
     }
     total = percentValue * bill;
     peopleNumber = people;
@@ -45,8 +48,9 @@ export const InputLayout: React.FC<Buttonprops> = ({
     setTotal(total);
     setperPerson(perPerson);
     setvalues(total, perPerson, bill, customPercentage, people);
+    console.log(buttonValue + "btn value");
+    console.log(customPercentage + " custom value");
   }, [bill, people, customPercentage, buttonValue]);
-
   return (
     <div className="Container">
       <div className="Input__container">
@@ -83,7 +87,7 @@ export const InputLayout: React.FC<Buttonprops> = ({
           <Button
             symbol="50%"
             percentage={0.5}
-            setTipPercentage={setButtonValue}
+            setTipPercentage={(value) => setButtonValue(value)}
           />
 
           <Custom
