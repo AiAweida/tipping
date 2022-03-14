@@ -1,6 +1,7 @@
 .OutputText {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
+  margin-bottom: 29px;
 }
 .Value p {
   text-align: end;
@@ -20,8 +21,7 @@
     margin-bottom: 58px;
   }
 }
-@media screen and (max-width: 1023px) {
+/* @media screen and (max-width: 1023px) {
   .OutputText {
-    margin-bottom: 29px;
   }
-}
+} */

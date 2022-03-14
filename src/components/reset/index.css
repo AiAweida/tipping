@@ -8,6 +8,7 @@
   font-family: monospace;
   color: var(--Verydarkcyan);
   cursor: pointer;
+  border: none;
 }
 .Reset:disabled {
   background-color: var(--DarkGrayishcyan);

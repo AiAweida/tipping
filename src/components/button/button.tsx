@@ -4,11 +4,13 @@ interface functionProps {
   symbol: string;
   percentage: number;
   setTipPercentage: (newValue: number) => void;
+  resetCustomValue: (newvlaue: string) => void;
 }
 const Button: React.FC<functionProps> = ({
   symbol,
   percentage,
   setTipPercentage,
+  resetCustomValue,
 }) => {
   return (
     <button
@@ -17,6 +19,9 @@ const Button: React.FC<functionProps> = ({
       value={percentage}
       onClick={() => {
         setTipPercentage(percentage);
+      }}
+      onMouseUp={() => {
+        resetCustomValue("");
       }}
     >
       {symbol}

@@ -5,7 +5,11 @@ interface HeaderProps {}
 export const Header: React.FC<HeaderProps> = () => {
   return (
     <header className="App__Header">
-      <img src={logo} alt="splitter" />
+      <img
+        src={logo}
+        alt="spli
+      tter"
+      />
     </header>
   );
 };

@@ -1,11 +1,16 @@
 import React, { FormEventHandler } from "react";
 import "./index.css";
 interface functionProps {
-  userPercentage: (newsValue: string) => void;
+  userPercentage: (newValue: string) => void;
   value: string;
+  resetButtonValue: (newvlaue: number) => void;
 }
 const handleFocus = (event: any) => event.target.select();
-const Custom: React.FC<functionProps> = ({ userPercentage, value }) => {
+const Custom: React.FC<functionProps> = ({
+  userPercentage,
+  value,
+  resetButtonValue,
+}) => {
   const handleSubmit: FormEventHandler<HTMLFormElement> = (e) => {
     e.preventDefault();
   };
@@ -16,6 +21,9 @@ const Custom: React.FC<functionProps> = ({ userPercentage, value }) => {
           onChange={(e) => {
             value = e.target.value;
             userPercentage(value);
+          }}
+          onKeyDownCapture={(e) => {
+            resetButtonValue(0);
           }}
           value={value}
           onClick={handleFocus}

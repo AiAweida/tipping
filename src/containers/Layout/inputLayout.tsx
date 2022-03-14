@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useLayoutEffect } from "react";
+import React, { useState, useEffect } from "react";
 import Button from "Components/Button/button";
 import TextInput from "Components/Textbox/textbox";
 import person from "images/person.svg";
@@ -24,26 +24,32 @@ export const InputLayout: React.FC<Buttonprops> = ({
   peopleNumber,
   customPercent,
 }) => {
-  let [buttonValue, setButtonValue] = useState(0);
+  let [buttonValue, setButtonValue] = useState<number>(0);
   let [customPercentage, setCustomPercentage] = useState("");
   let [perPerson, setperPerson] = useState<number>(0);
   let [total, setTotal] = useState<number>(0);
   let [people, setPeoaple] = useState<number>(1);
   let [bill, setBill] = useState<number>(0);
   let percentValue: number;
-  useLayoutEffect(() => {
+
+  useEffect(() => {
     if (customPercentage !== "") {
+      // eslint-disable-next-line react-hooks/exhaustive-deps
       percentValue = parseInt(customPercentage) / 100;
-      setButtonValue(0);
     }
     if (buttonValue > 0) {
       percentValue = buttonValue;
-      setCustomPercentage("");
-      // setButtonValue(buttonValue);
     }
+    if (customPercentage === "" && buttonValue === 0) {
+      percentValue = 1;
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     total = percentValue * bill;
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     peopleNumber = people;
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     perPerson = total / people;
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     valueofbill = bill;
     setTotal(total);
     setperPerson(perPerson);
@@ -51,6 +57,12 @@ export const InputLayout: React.FC<Buttonprops> = ({
     console.log(buttonValue + "btn value");
     console.log(customPercentage + " custom value");
   }, [bill, people, customPercentage, buttonValue]);
+  const resetButtonValue = (value: number) => {
+    setButtonValue(value);
+  };
+  const resetcustomValue = (value: string) => {
+    setCustomPercentage(value);
+  };
   return (
     <div className="Container">
       <div className="Input__container">
@@ -65,26 +77,31 @@ export const InputLayout: React.FC<Buttonprops> = ({
         <p>Select Tip %</p>
         <div className="Button__container">
           <Button
+            resetCustomValue={resetcustomValue}
             symbol="5%"
             percentage={0.05}
             setTipPercentage={setButtonValue}
           />
           <Button
+            resetCustomValue={resetcustomValue}
             symbol="10%"
             percentage={0.1}
             setTipPercentage={setButtonValue}
           />
           <Button
+            resetCustomValue={resetcustomValue}
             symbol="15%"
             percentage={0.15}
             setTipPercentage={setButtonValue}
           />
           <Button
+            resetCustomValue={resetcustomValue}
             symbol="25%"
             percentage={0.25}
             setTipPercentage={setButtonValue}
           />
           <Button
+            resetCustomValue={resetcustomValue}
             symbol="50%"
             percentage={0.5}
             setTipPercentage={(value) => setButtonValue(value)}
@@ -93,6 +110,7 @@ export const InputLayout: React.FC<Buttonprops> = ({
           <Custom
             userPercentage={(value) => setCustomPercentage(value)}
             value={customPercent}
+            resetButtonValue={resetButtonValue}
           />
         </div>
         <p>Number Of People</p>

@@ -31,7 +31,6 @@ function App() {
     setCustom("");
     setPoeplNum(1);
   };
-  let buttonValue: number;
   return (
     <div className="App">
       <Header />
