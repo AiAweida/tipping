@@ -40,6 +40,7 @@ function App() {
           peopleNumber={poeplnum}
           customPercent={custom}
         />
+
         <OutputLayout
           reset={resetcallback}
           totalToPay={total}

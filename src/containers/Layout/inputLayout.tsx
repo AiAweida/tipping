@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from "react";
 import Button from "Components/Button/button";
-import TextInput from "Components/Textbox/textbox";
-import person from "images/person.svg";
-import Bill from "images/dollar.svg";
+import BillValue from "Components/billValue/billValue";
 import Custom from "Components/Custom/custom";
 import "./inputlayout.css";
+import PeopleNumber from "Components/PeopleNumber/PeopleNumber";
+import { InputValues } from "context";
 
 interface InputLayoutProps {
   setvalues: (
@@ -55,13 +55,7 @@ export const InputLayout: React.FC<InputLayoutProps> = ({
     <div className="Container">
       <div className="Input__container">
         <p>Bill</p>
-        <TextInput
-          userSetBill={(value) => setBill(value)}
-          value={valueofbill}
-          icon={Bill}
-          label="bill"
-          iden="bill"
-        />
+        <BillValue />
         <p>Select Tip %</p>
         <div className="Button__container">
           <Button
@@ -102,13 +96,7 @@ export const InputLayout: React.FC<InputLayoutProps> = ({
           />
         </div>
         <p>Number Of People</p>
-        <TextInput
-          userSetBill={(value) => setPeoaple(value)}
-          value={peopleNumber}
-          icon={person}
-          label="person"
-          iden="people"
-        />
+        <PeopleNumber />
       </div>
     </div>
   );

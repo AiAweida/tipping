@@ -1,0 +1,22 @@
+.css-ittuaa-MuiInputAdornment-root {
+  padding-left: 10px;
+}
+.css-o9k5xi-MuiInputBase-root-MuiOutlinedInput-root {
+  background-color: var(--LightGrayishcyan);
+
+  padding-right: 0px !important;
+}
+.css-nxo287-MuiInputBase-input-MuiOutlinedInput-input {
+  font-family: var(--FamilyFont) !important;
+  color: var(--Verydarkcyan) !important;
+  padding: 11.5px 42px !important;
+  font-size: 24px !important;
+  cursor: pointer;
+}
+
+.css-1u3bzj6-MuiFormControl-root-MuiTextField-root {
+  width: 100% !important;
+}
+.css-1b0ve20 > :not(style) {
+  margin: 0 !important;
+}
