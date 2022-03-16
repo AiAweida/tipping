@@ -8,7 +8,7 @@ interface textInput {
   label: string;
   iden: string;
   value: number;
-  userSetBill: (newValue: number) => void;
+  userSetBill: (newValue: number) => void; // change name of this value
 }
 const handleFocus = (event: any) => event.target.select();
 const TextInput: React.FC<textInput> = ({
@@ -26,9 +26,7 @@ const TextInput: React.FC<textInput> = ({
           userSetBill(value);
         }}
         onKeyUp={() => {
-          if (value >= 0 && iden === "bill") {
-            userSetBill(value);
-          } else if (value >= 0 && iden === "people") {
+          if (value >= 0) {
             userSetBill(value);
           } else {
             alert("Please Insert A Vailed number of " + iden);

@@ -6,6 +6,7 @@ interface functionProps {
   setTipPercentage: (newValue: number) => void;
   resetCustomValue: (newvlaue: string) => void;
 }
+// use just one props for both symbol and percenntagevalue
 const Button: React.FC<functionProps> = ({
   symbol,
   percentage,

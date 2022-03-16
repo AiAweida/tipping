@@ -13,16 +13,9 @@
 ::-webkit-input-placeholder {
   text-align: center;
 }
-.Custom:hover {
-  border: 3px solid var(--Strongcyan);
-  transition: 0.1s;
-}
-.Custom:active {
-  border: 3px solid var(--Strongcyan);
-  box-shadow: none;
-}
+.Custom:hover,
+.Custom:active,
 .Custom:valid {
-  box-shadow: none;
   border: 3px solid var(--Strongcyan);
 }
 .Custom:invalid {

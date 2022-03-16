@@ -1,9 +1,8 @@
-import * as React from "react";
-import "App.css";
+import React, { useState } from "react";
 import { Header } from "Containers/Header";
 import { InputLayout } from "Containers/Layout";
 import { OutputLayout } from "Containers/output";
-import { useState } from "react";
+import "App.css";
 
 function App() {
   let [perPerson, setperPerson] = useState(0);
@@ -24,10 +23,10 @@ function App() {
     setPoeplNum(people);
     setBilled(bill);
   };
-  const resetcallback = (newValue: number) => {
-    setTotal(newValue);
-    setperPerson(newValue);
-    setBilled(newValue);
+  const resetcallback = () => {
+    setTotal(0);
+    setperPerson(0);
+    setBilled(0);
     setCustom("");
     setPoeplNum(1);
   };
@@ -43,8 +42,8 @@ function App() {
         />
         <OutputLayout
           reset={resetcallback}
-          totaltopay={total}
-          perpersontopay={perPerson}
+          totalToPay={total}
+          perPersonToPay={perPerson}
           bill={billed}
           people={poeplnum}
         />

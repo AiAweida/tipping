@@ -1,10 +1,12 @@
-import * as React from "react";
-import "./index.css";
+import React from "react";
 import dollar from "images/dollar.svg";
+import "./index.css";
+
 interface output {
   title: string;
   value: number;
 }
+
 export const OutPutText: React.FC<output> = ({ title, value }) => {
   return (
     <div className="OutputText">
@@ -13,7 +15,7 @@ export const OutPutText: React.FC<output> = ({ title, value }) => {
         <p>/Person</p>
       </div>
       <div className="Value">
-        <p dir="rtl ">
+        <p>
           <img src={dollar} alt="dollar"></img>
           {value}
         </p>
