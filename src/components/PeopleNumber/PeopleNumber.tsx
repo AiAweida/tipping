@@ -14,7 +14,7 @@ const PeopleNumber = () => {
       <TextField
         onChange={(e) => {
           context.setPeopleNumber && context.setPeopleNumber(e.target.value);
-          // console.log();
+          console.log();
         }}
         type="text"
         value={context.peopleNumber}
