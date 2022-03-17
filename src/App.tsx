@@ -1,10 +1,11 @@
-import React, { useState } from "react";
+import React, { createContext, useState } from "react";
 import { Header } from "Containers/Header";
 import { InputLayout } from "Containers/Layout";
 import { OutputLayout } from "Containers/output";
 import "App.css";
 
-function App() {
+export const TextFeildContext = createContext({});
+export default function App() {
   let [perPerson, setperPerson] = useState(0);
   let [total, setTotal] = useState(0);
   let [billed, setBilled] = useState(0);
@@ -31,26 +32,26 @@ function App() {
     setPoeplNum(1);
   };
   return (
-    <div className="App">
-      <Header />
-      <main className="Container__in-out">
-        <InputLayout
-          setvalues={getvalues}
-          valueofbill={billed}
-          peopleNumber={poeplnum}
-          customPercent={custom}
-        />
+    <TextFeildContext.Provider value={total}>
+      <div className="App">
+        <Header />
+        <main className="Container__in-out">
+          <InputLayout
+            setvalues={getvalues}
+            valueofbill={billed}
+            peopleNumber={poeplnum}
+            customPercent={custom}
+          />
 
-        <OutputLayout
-          reset={resetcallback}
-          totalToPay={total}
-          perPersonToPay={perPerson}
-          bill={billed}
-          people={poeplnum}
-        />
-      </main>
-    </div>
+          <OutputLayout
+            reset={resetcallback}
+            totalToPay={total}
+            perPersonToPay={perPerson}
+            bill={billed}
+            people={poeplnum}
+          />
+        </main>
+      </div>
+    </TextFeildContext.Provider>
   );
 }
-
-export default App;

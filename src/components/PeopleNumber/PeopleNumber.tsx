@@ -7,17 +7,17 @@ import people from "images/person.svg";
 import "./index.css";
 
 const PeopleNumber = () => {
-  const context: any = useContext(TextFeildContext);
-  console.log(context);
+  const Context: any = useContext(TextFeildContext);
+  console.log(Context);
   return (
     <Box sx={{ "& > :not(style)": { m: 1 } }}>
       <TextField
         onChange={(e) => {
-          context.setPeopleNumber && context.setPeopleNumber(e.target.value);
+          Context.setPeopleNumber && Context.setPeopleNumber(e.target.value);
           console.log();
         }}
         type="text"
-        value={context.peopleNumber}
+        value={Context.peopleNumber}
         dir="rtl"
         InputProps={{
           endAdornment: (
