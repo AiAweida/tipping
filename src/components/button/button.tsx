@@ -1,5 +1,4 @@
-import React, { useContext } from "react";
-import { TextFeildContext } from "context";
+import React from "react";
 import "./index.css";
 interface functionProps {
   symbol: string;
@@ -14,7 +13,6 @@ const Button: React.FC<functionProps> = ({
   setTipPercentage,
   resetCustomValue,
 }) => {
-  const { billValue }: any = useContext(TextFeildContext);
   return (
     <button
       id={symbol}
