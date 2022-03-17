@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Button from "Components/Button/button";
-import TextInput from "Components/Textbox/textbox";
+import TextInput from "Components/textbox/textbox";
 import person from "images/person.svg";
 import Bill from "images/dollar.svg";
 import Custom from "Components/Custom/custom";
