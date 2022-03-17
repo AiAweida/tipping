@@ -10,7 +10,7 @@ interface ResetProps {
 export const Reset: React.FC<ResetProps> = ({ reset, bill, people }) => {
   return (
     <button
-      disabled={bill > 0 || people > 1 ? false : true}
+      // disabled={bill > 0 || people > 1 ? false : true}
       type="submit"
       className="Reset"
       id="resetButton"

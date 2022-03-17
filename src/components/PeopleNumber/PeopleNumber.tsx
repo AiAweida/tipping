@@ -8,13 +8,11 @@ import "./index.css";
 
 const PeopleNumber = () => {
   const Context: any = useContext(TextFeildContext);
-  console.log(Context);
   return (
     <Box sx={{ "& > :not(style)": { m: 1 } }}>
       <TextField
         onChange={(e) => {
           Context.setPeopleNumber && Context.setPeopleNumber(e.target.value);
-          console.log();
         }}
         type="text"
         value={Context.peopleNumber}
