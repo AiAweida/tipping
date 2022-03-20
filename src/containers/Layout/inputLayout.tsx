@@ -11,12 +11,11 @@ interface InputLayoutProps {
 }
 export const InputLayout: React.FC<InputLayoutProps> = ({ setvalues }) => {
   let [buttonValue, setButtonValue] = useState<number>(0);
-  let [perPerson, setperPerson] = useState<number>(0);
-  let [total, setTotal] = useState<number>(0);
   const { customPercent } = useContext(TextFeildContext);
   const { peoplenum } = useContext(TextFeildContext);
   const { billValue } = useContext(TextFeildContext);
-
+  let total: number;
+  let perPerson: number;
   useEffect(() => {
     let percentValue: number = 0;
     if (customPercent !== "") {
@@ -30,8 +29,6 @@ export const InputLayout: React.FC<InputLayoutProps> = ({ setvalues }) => {
     }
     total = billValue * percentValue;
     perPerson = total / peoplenum;
-    setTotal(total);
-    setperPerson(perPerson);
     setvalues(total, perPerson);
   }, [billValue, peoplenum, customPercent, buttonValue]);
 
