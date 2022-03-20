@@ -4,32 +4,25 @@ import Custom from "Components/Custom/custom";
 import BillValue from "Components/billValue/billValue";
 import PeopleNumber from "Components/PeopleNumber/PeopleNumber";
 import "./inputlayout.css";
-import { TextFeildContext } from "context";
+import { TextFeildContext, PeopleFeildContext } from "context";
 
 interface InputLayoutProps {
   setvalues: (
     total: number,
     perperson: number,
-    bill: number,
-    custompercentage: string,
-    people: number
+    custompercentage: string
   ) => void;
-  valueofbill: number;
-  peopleNumber: number;
   customPercent: string;
 }
 export const InputLayout: React.FC<InputLayoutProps> = ({
   setvalues,
-  valueofbill,
-  peopleNumber,
   customPercent,
 }) => {
   let [buttonValue, setButtonValue] = useState<number>(0);
   let [customPercentage, setCustomPercentage] = useState("");
   let [perPerson, setperPerson] = useState<number>(0);
   let [total, setTotal] = useState<number>(0);
-  let [people, setPeoaple] = useState<number>(1);
-  let [bill, setBill] = useState<number>(0);
+  const { peoplenum, setPeoplenum }: any = useContext(PeopleFeildContext);
   const { billValue, setBillValue }: any = useContext(TextFeildContext);
 
   useEffect(() => {
@@ -43,14 +36,12 @@ export const InputLayout: React.FC<InputLayoutProps> = ({
     if (customPercentage === "" && buttonValue === 0) {
       percentValue = 1;
     }
-    total = billValue;
-    peopleNumber = people;
-    perPerson = total / people;
-    valueofbill = billValue;
+    total = billValue * percentValue;
+    perPerson = total / peoplenum;
     setTotal(total);
     setperPerson(perPerson);
-    setvalues(total, perPerson, billValue, customPercentage, people);
-  }, [billValue, people, customPercentage, buttonValue]);
+    setvalues(total, perPerson, customPercentage);
+  }, [billValue, peoplenum, customPercentage, buttonValue]);
 
   return (
     <div className="Container">

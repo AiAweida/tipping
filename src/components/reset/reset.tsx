@@ -3,11 +3,9 @@ import "./index.css";
 
 interface ResetProps {
   reset: () => void;
-  bill: number;
-  people: number;
 }
 
-export const Reset: React.FC<ResetProps> = ({ reset, bill, people }) => {
+export const Reset: React.FC<ResetProps> = ({ reset }) => {
   return (
     <button
       // disabled={bill > 0 || people > 1 ? false : true}

@@ -8,7 +8,6 @@ import "./index.css";
 
 const BillValue = () => {
   const { billValue, setBillValue }: any = useContext(TextFeildContext);
-  console.log(billValue);
   return (
     <Box sx={{ "& > :not(style)": { m: 1 } }}>
       <TextField
