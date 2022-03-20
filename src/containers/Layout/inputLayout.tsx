@@ -4,44 +4,36 @@ import Custom from "Components/Custom/custom";
 import BillValue from "Components/billValue/billValue";
 import PeopleNumber from "Components/PeopleNumber/PeopleNumber";
 import "./inputlayout.css";
-import { TextFeildContext, PeopleFeildContext } from "context";
+import { TextFeildContext } from "context";
 
 interface InputLayoutProps {
-  setvalues: (
-    total: number,
-    perperson: number,
-    custompercentage: string
-  ) => void;
-  customPercent: string;
+  setvalues: (total: number, perperson: number) => void;
 }
-export const InputLayout: React.FC<InputLayoutProps> = ({
-  setvalues,
-  customPercent,
-}) => {
+export const InputLayout: React.FC<InputLayoutProps> = ({ setvalues }) => {
   let [buttonValue, setButtonValue] = useState<number>(0);
-  let [customPercentage, setCustomPercentage] = useState("");
   let [perPerson, setperPerson] = useState<number>(0);
   let [total, setTotal] = useState<number>(0);
-  const { peoplenum, setPeoplenum }: any = useContext(PeopleFeildContext);
-  const { billValue, setBillValue }: any = useContext(TextFeildContext);
+  const { customPercent } = useContext(TextFeildContext);
+  const { peoplenum } = useContext(TextFeildContext);
+  const { billValue } = useContext(TextFeildContext);
 
   useEffect(() => {
     let percentValue: number = 0;
-    if (customPercentage !== "") {
-      percentValue = parseInt(customPercentage) / 100;
+    if (customPercent !== "") {
+      percentValue = parseInt(customPercent) / 100;
     }
     if (buttonValue > 0) {
       percentValue = buttonValue;
     }
-    if (customPercentage === "" && buttonValue === 0) {
+    if (customPercent === "" && buttonValue === 0) {
       percentValue = 1;
     }
     total = billValue * percentValue;
     perPerson = total / peoplenum;
     setTotal(total);
     setperPerson(perPerson);
-    setvalues(total, perPerson, customPercentage);
-  }, [billValue, peoplenum, customPercentage, buttonValue]);
+    setvalues(total, perPerson);
+  }, [billValue, peoplenum, customPercent, buttonValue]);
 
   return (
     <div className="Container">
@@ -52,41 +44,31 @@ export const InputLayout: React.FC<InputLayoutProps> = ({
 
         <div className="Button__container">
           <Button
-            resetCustomValue={(value) => setCustomPercentage(value)}
             symbol="5%"
             percentage={0.05}
             setTipPercentage={setButtonValue}
           />
           <Button
-            resetCustomValue={setCustomPercentage}
             symbol="10%"
             percentage={0.1}
             setTipPercentage={setButtonValue}
           />
           <Button
-            resetCustomValue={setCustomPercentage}
             symbol="15%"
             percentage={0.15}
             setTipPercentage={setButtonValue}
           />
           <Button
-            resetCustomValue={setCustomPercentage}
             symbol="25%"
             percentage={0.25}
             setTipPercentage={setButtonValue}
           />
           <Button
-            resetCustomValue={setCustomPercentage}
             symbol="50%"
             percentage={0.5}
             setTipPercentage={(value) => setButtonValue(value)}
           />
-
-          <Custom
-            userPercentage={(value) => setCustomPercentage(value)}
-            value={customPercent}
-            resetButtonValue={setButtonValue}
-          />
+          <Custom />
         </div>
         <p>Number Of People</p>
         <PeopleNumber />

@@ -7,11 +7,11 @@ import dollar from "images/dollar.svg";
 import "./index.css";
 
 const BillValue = () => {
-  const { billValue, setBillValue }: any = useContext(TextFeildContext);
+  const { billValue, setBillValue } = useContext(TextFeildContext);
   return (
     <Box sx={{ "& > :not(style)": { m: 1 } }}>
       <TextField
-        onChange={(e) => setBillValue(e.target.value)}
+        onChange={(e) => setBillValue(+e.target.value)}
         type="text"
         value={billValue}
         dir="rtl"

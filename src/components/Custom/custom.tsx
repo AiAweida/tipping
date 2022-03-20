@@ -1,28 +1,14 @@
-import React, { FormEventHandler } from "react";
+import { TextFeildContext } from "context";
+import React, { useContext } from "react";
 import "./index.css";
-interface functionProps {
-  userPercentage: (newValue: string) => void;
-  value: string;
-  resetButtonValue: (newvlaue: number) => void;
-}
-const handleFocus = (event: any) => event.target.select();
-const Custom: React.FC<functionProps> = ({
-  userPercentage,
-  value,
-  resetButtonValue,
-}) => {
+
+const Custom = () => {
+  const { customPercent, setCustomPercent } = useContext(TextFeildContext);
   return (
     <>
       <input
-        onChange={(e) => {
-          value = e.target.value;
-          userPercentage(value);
-        }}
-        onKeyDownCapture={(e) => {
-          resetButtonValue(0);
-        }}
-        value={value}
-        onClick={handleFocus}
+        onChange={(e) => setCustomPercent(e.target.value)}
+        value={customPercent}
         type="number"
         className="Custom"
         placeholder="custom"
