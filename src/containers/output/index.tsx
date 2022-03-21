@@ -4,11 +4,9 @@ import { TextFeildContext } from "context";
 import { useContext } from "react";
 import "./output.css";
 
-interface props {
-  reset: () => void;
-}
+interface props {}
 
-export const OutputLayout: React.FC<props> = ({ reset }) => {
+export const OutputLayout: React.FC<props> = () => {
   const { peoplenum, billValue, percentage } = useContext(TextFeildContext);
   const totalToPay = billValue * percentage;
   const perPersonToPay = totalToPay / peoplenum;
@@ -18,7 +16,7 @@ export const OutputLayout: React.FC<props> = ({ reset }) => {
       <OutPutText title="Tip Amount" value={perPersonToPay} />
       <OutPutText title="Total" value={totalToPay} />
       <div className="Reset__Layout">
-        <Reset reset={reset} />
+        <Reset />
       </div>
     </div>
   );

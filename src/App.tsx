@@ -5,21 +5,10 @@ import { InputLayout } from "Containers/Layout";
 import { OutputLayout } from "Containers/output";
 import "App.css";
 export default function App() {
-  let [perPerson, setperPerson] = useState(0);
-  let [total, setTotal] = useState(0);
-  let [buttonValue, setButtonValue] = useState(0);
-
-  const resetcallback = () => {
-    setTotal(0);
-    setperPerson(0);
-    setBillValue(0);
-    setPeoplenum(1);
-    setPercentage(0);
-    setButtonValue(0);
-  };
   let [billValue, setBillValue] = useState(0);
   let [peoplenum, setPeoplenum] = useState(1);
   const [percentage, setPercentage] = useState(0);
+
   return (
     <div className="App">
       <Header />
@@ -37,7 +26,7 @@ export default function App() {
         <main className="Container__in-out">
           <InputLayout />
 
-          <OutputLayout reset={resetcallback} />
+          <OutputLayout />
         </main>
       </TextFeildContext.Provider>
     </div>

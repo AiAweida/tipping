@@ -7,12 +7,14 @@ import people from "images/person.svg";
 import "./index.css";
 
 const PeopleNumber = () => {
+  const handleFocus = (event: any) => event.target.select();
   const { peoplenum, setPeoplenum } = useContext(TextFeildContext);
 
   return (
     <Box sx={{ "& > :not(style)": { m: 1 } }}>
       <TextField
         onChange={(e) => setPeoplenum(+e.target.value)}
+        onClick={handleFocus}
         type="text"
         value={peoplenum}
         dir="rtl"

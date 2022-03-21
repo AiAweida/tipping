@@ -19,6 +19,7 @@ export const InputLayout: React.FC = () => {
           <Button symbol="15%" percentage={0.15} />
           <Button symbol="25%" percentage={0.25} />
           <Button symbol="50%" percentage={0.5} />
+
           <Custom />
         </div>
         <p>Number Of People</p>
