@@ -8,16 +8,14 @@ export default function App() {
   let [perPerson, setperPerson] = useState(0);
   let [total, setTotal] = useState(0);
   let [buttonValue, setButtonValue] = useState(0);
-  const getvalues = (totaltopay: number, personToPay: number) => {
-    setperPerson(personToPay);
-    setTotal(totaltopay);
-  };
+
   const resetcallback = () => {
     setTotal(0);
     setperPerson(0);
     setBillValue(0);
     setPeoplenum(1);
     setPercentage(0);
+    setButtonValue(0);
   };
   let [billValue, setBillValue] = useState(0);
   let [peoplenum, setPeoplenum] = useState(1);
@@ -37,7 +35,7 @@ export default function App() {
         }}
       >
         <main className="Container__in-out">
-          <InputLayout setvalues={getvalues} setButtonValue={setButtonValue} />
+          <InputLayout />
 
           <OutputLayout reset={resetcallback} buttonValue={buttonValue} />
         </main>

@@ -5,14 +5,7 @@ import BillValue from "Components/billValue/billValue";
 import PeopleNumber from "Components/PeopleNumber/PeopleNumber";
 import "./inputlayout.css";
 
-interface InputLayoutProps {
-  setvalues: (total: number, perperson: number) => void;
-  setButtonValue: React.Dispatch<React.SetStateAction<number>>;
-}
-export const InputLayout: React.FC<InputLayoutProps> = ({
-  setvalues,
-  setButtonValue,
-}) => {
+export const InputLayout: React.FC = () => {
   return (
     <div className="Container">
       <div className="Input__container">

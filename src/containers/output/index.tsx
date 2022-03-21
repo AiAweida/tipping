@@ -6,13 +6,10 @@ import "./output.css";
 
 interface props {
   reset: () => void;
-  buttonValue: number;
 }
 
-export const OutputLayout: React.FC<props> = ({ reset, buttonValue }) => {
-  const { peoplenum } = useContext(TextFeildContext);
-  const { billValue } = useContext(TextFeildContext);
-  const { percentage } = useContext(TextFeildContext);
+export const OutputLayout: React.FC<props> = ({ reset }) => {
+  const { peoplenum, billValue, percentage } = useContext(TextFeildContext);
   const totalToPay = billValue * percentage;
   const perPersonToPay = totalToPay / peoplenum;
 
