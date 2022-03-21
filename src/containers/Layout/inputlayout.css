@@ -1,0 +1,21 @@
+.Button__container {
+  display: grid;
+  grid-template-columns: repeat(2, calc(50% - 5px));
+  grid-template-rows: repeat(3, 50px);
+  grid-gap: 10px;
+}
+.Input__container p {
+  color: grey;
+  font-size: 12px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.Input__container {
+  padding: inherit;
+}
+@media screen and (min-width: 1024px) {
+  .Button__container {
+    grid-template-rows: repeat(2, 50px);
+    grid-template-columns: repeat(3, calc(32% - 5px));
+  }
+}

@@ -1,0 +1,15 @@
+.Output__Container {
+  background-color: var(--Verydarkcyan);
+  border-radius: 10px;
+  padding: 30px;
+  margin-top: 10px;
+}
+@media screen and (min-width: 1024px) {
+  .Reset__Layout {
+    margin-top: 100px;
+  }
+  .Output__Container {
+    margin-left: 15px;
+    width: 50%;
+  }
+}

@@ -1,0 +1,23 @@
+.OutputText {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  margin-bottom: 29px;
+}
+.Value p {
+  text-align: end;
+  color: var(--Strongcyan);
+  font-size: 24px;
+}
+.Output-title p {
+  font-size: 70%;
+  color: #5e7a7d;
+}
+.Output-title h3 {
+  color: white;
+  font-size: 100%;
+}
+@media screen and (min-width: 1024px) {
+  .OutputText {
+    margin-bottom: 58px;
+  }
+}
