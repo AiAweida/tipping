@@ -1,13 +1,20 @@
 import { TextFeildContext } from "context";
-import React, { useContext } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import "./index.css";
 
 const Custom = () => {
-  const { customPercent, setCustomPercent } = useContext(TextFeildContext);
+  const { setPercentage } = useContext(TextFeildContext);
+  const [customPercent, setCustomPercent] = useState("");
+  useEffect(() => {
+    setPercentage(+customPercent / 100);
+  }, [customPercent, setPercentage]);
+
   return (
     <>
       <input
-        onChange={(e) => setCustomPercent(e.target.value)}
+        onChange={(e) => {
+          setCustomPercent(e.target.value);
+        }}
         value={customPercent}
         type="number"
         className="Custom"

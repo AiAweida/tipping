@@ -1,23 +1,20 @@
-import React from "react";
+import { TextFeildContext } from "context";
+import React, { useContext } from "react";
 import "./index.css";
 interface functionProps {
   symbol: string;
   percentage: number;
-  setTipPercentage: (newValue: number) => void;
 }
 // use just one props for both symbol and percenntagevalue
-const Button: React.FC<functionProps> = ({
-  symbol,
-  percentage,
-  setTipPercentage,
-}) => {
+const Button: React.FC<functionProps> = ({ symbol, percentage }) => {
+  const { setPercentage } = useContext(TextFeildContext);
   return (
     <button
       id={symbol}
       className="Button"
       value={percentage}
       onClick={() => {
-        setTipPercentage(percentage);
+        setPercentage(percentage);
       }}
     >
       {symbol}

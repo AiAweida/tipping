@@ -1,37 +1,18 @@
-import React, { useState, useEffect, useContext } from "react";
+import React from "react";
 import Button from "Components/Button/button";
 import Custom from "Components/Custom/custom";
 import BillValue from "Components/billValue/billValue";
 import PeopleNumber from "Components/PeopleNumber/PeopleNumber";
 import "./inputlayout.css";
-import { TextFeildContext } from "context";
 
 interface InputLayoutProps {
   setvalues: (total: number, perperson: number) => void;
+  setButtonValue: React.Dispatch<React.SetStateAction<number>>;
 }
-export const InputLayout: React.FC<InputLayoutProps> = ({ setvalues }) => {
-  let [buttonValue, setButtonValue] = useState<number>(0);
-  const { customPercent } = useContext(TextFeildContext);
-  const { peoplenum } = useContext(TextFeildContext);
-  const { billValue } = useContext(TextFeildContext);
-  let total: number;
-  let perPerson: number;
-  useEffect(() => {
-    let percentValue: number = 0;
-    if (customPercent !== "") {
-      percentValue = parseInt(customPercent) / 100;
-    }
-    if (buttonValue > 0) {
-      percentValue = buttonValue;
-    }
-    if (customPercent === "" && buttonValue === 0) {
-      percentValue = 1;
-    }
-    total = billValue * percentValue;
-    perPerson = total / peoplenum;
-    setvalues(total, perPerson);
-  }, [billValue, peoplenum, customPercent, buttonValue]);
-
+export const InputLayout: React.FC<InputLayoutProps> = ({
+  setvalues,
+  setButtonValue,
+}) => {
   return (
     <div className="Container">
       <div className="Input__container">
@@ -40,31 +21,11 @@ export const InputLayout: React.FC<InputLayoutProps> = ({ setvalues }) => {
         <p>Select Tip %</p>
 
         <div className="Button__container">
-          <Button
-            symbol="5%"
-            percentage={0.05}
-            setTipPercentage={setButtonValue}
-          />
-          <Button
-            symbol="10%"
-            percentage={0.1}
-            setTipPercentage={setButtonValue}
-          />
-          <Button
-            symbol="15%"
-            percentage={0.15}
-            setTipPercentage={setButtonValue}
-          />
-          <Button
-            symbol="25%"
-            percentage={0.25}
-            setTipPercentage={setButtonValue}
-          />
-          <Button
-            symbol="50%"
-            percentage={0.5}
-            setTipPercentage={(value) => setButtonValue(value)}
-          />
+          <Button symbol="5%" percentage={0.05} />
+          <Button symbol="10%" percentage={0.1} />
+          <Button symbol="15%" percentage={0.15} />
+          <Button symbol="25%" percentage={0.25} />
+          <Button symbol="50%" percentage={0.5} />
           <Custom />
         </div>
         <p>Number Of People</p>
