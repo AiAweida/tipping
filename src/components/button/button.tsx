@@ -5,7 +5,6 @@ interface functionProps {
   symbol: string;
   percentage: number;
 }
-// use just one props for both symbol and percenntagevalue
 const Button: React.FC<functionProps> = ({ symbol, percentage }) => {
   const { setPercentage } = useContext(TextFeildContext);
   return (

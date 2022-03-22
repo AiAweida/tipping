@@ -7,11 +7,13 @@ import dollar from "images/dollar.svg";
 import "./index.css";
 
 const BillValue = () => {
+  const handleFocus = (event: any) => event.target.select();
   const { billValue, setBillValue } = useContext(TextFeildContext);
   return (
-    <Box sx={{ "& > :not(style)": { m: 1 } }}>
+    <Box>
       <TextField
         onChange={(e) => setBillValue(+e.target.value)}
+        onClick={handleFocus}
         type="text"
         value={billValue}
         dir="rtl"
