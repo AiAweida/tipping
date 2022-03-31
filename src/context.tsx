@@ -15,20 +15,3 @@ export const TextFeildContext = createContext<UserContextType>({
   percentage: 0,
   setPercentage: () => {},
 });
-
-// type PeopleContextType = {
-//   peoplenum: number;
-//   setPeoplenum: (people: number) => void;
-// };
-// export const PeopleFeildContext = createContext<PeopleContextType>({
-//   peoplenum: 0,
-//   setPeoplenum: () => {},
-// });
-// type customPercentType = {
-//   customPercent: string;
-//   setCustomPercent: (percent: string) => void;
-// };
-// export const CutomPercentContext = createContext<customPercentType>({
-//   customPercent: "",
-//   setCustomPercent: () => {},
-// });
