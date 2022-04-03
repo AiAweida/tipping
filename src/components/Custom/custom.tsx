@@ -8,7 +8,7 @@ const Custom = () => {
   const [customPercent, setCustomPercent] = useState("");
   useEffect(() => {
     setPercentage(+customPercent / 100);
-  }, [customPercent, setPercentage]);
+  }, [customPercent]);
 
   return (
     <>

@@ -24,4 +24,3 @@ export const Reset: React.FC<ResetProps> = () => {
     </button>
   );
 };
-// export default Reset;

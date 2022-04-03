@@ -9,7 +9,6 @@ import "./index.css";
 const PeopleNumber = () => {
   const handleFocus = (event: any) => event.target.select();
   const { peoplenum, setPeoplenum } = useContext(TextFeildContext);
-
   return (
     <Box sx={{ "& > :not(style)": { m: 1 } }}>
       <TextField

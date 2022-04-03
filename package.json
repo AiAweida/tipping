@@ -1,4 +1,5 @@
 {
+  "homepage": "https://aiaweida.github.io/tipping",
   "name": "my-app",
   "version": "0.1.0",
   "private": true,
@@ -20,11 +21,14 @@
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-imask": "^6.4.2",
+    "react-router-dom": "^5.2.0",
     "react-scripts": "^5.0.0",
     "typescript": "^4.5.5",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
@@ -47,5 +51,9 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@types/react-router-dom": "^5.3.3",
+    "gh-pages": "^3.2.3"
   }
 }
